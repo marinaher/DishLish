@@ -206,8 +206,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddressesController.cs" />
+    <Compile Include="Controllers\CurrentInventoriesController.cs" />
+    <Compile Include="Controllers\FavoriteRecipesController.cs" />
+    <Compile Include="Controllers\GroceryListsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PantryOwnersController.cs" />
+    <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -289,6 +296,41 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Addresses\Create.cshtml" />
+    <Content Include="Views\Addresses\Delete.cshtml" />
+    <Content Include="Views\Addresses\Details.cshtml" />
+    <Content Include="Views\Addresses\Edit.cshtml" />
+    <Content Include="Views\Addresses\Index.cshtml" />
+    <Content Include="Views\CurrentInventories\Create.cshtml" />
+    <Content Include="Views\CurrentInventories\Delete.cshtml" />
+    <Content Include="Views\CurrentInventories\Details.cshtml" />
+    <Content Include="Views\CurrentInventories\Edit.cshtml" />
+    <Content Include="Views\CurrentInventories\Index.cshtml" />
+    <Content Include="Views\FavoriteRecipes\Create.cshtml" />
+    <Content Include="Views\FavoriteRecipes\Delete.cshtml" />
+    <Content Include="Views\FavoriteRecipes\Details.cshtml" />
+    <Content Include="Views\FavoriteRecipes\Edit.cshtml" />
+    <Content Include="Views\FavoriteRecipes\Index.cshtml" />
+    <Content Include="Views\GroceryLists\Create.cshtml" />
+    <Content Include="Views\GroceryLists\Delete.cshtml" />
+    <Content Include="Views\GroceryLists\Details.cshtml" />
+    <Content Include="Views\GroceryLists\Edit.cshtml" />
+    <Content Include="Views\GroceryLists\Index.cshtml" />
+    <Content Include="Views\Ingredients\Create.cshtml" />
+    <Content Include="Views\Ingredients\Delete.cshtml" />
+    <Content Include="Views\Ingredients\Details.cshtml" />
+    <Content Include="Views\Ingredients\Edit.cshtml" />
+    <Content Include="Views\Ingredients\Index.cshtml" />
+    <Content Include="Views\PantryOwners\Create.cshtml" />
+    <Content Include="Views\PantryOwners\Delete.cshtml" />
+    <Content Include="Views\PantryOwners\Details.cshtml" />
+    <Content Include="Views\PantryOwners\Edit.cshtml" />
+    <Content Include="Views\PantryOwners\Index.cshtml" />
+    <Content Include="Views\Recipes\Create.cshtml" />
+    <Content Include="Views\Recipes\Delete.cshtml" />
+    <Content Include="Views\Recipes\Details.cshtml" />
+    <Content Include="Views\Recipes\Edit.cshtml" />
+    <Content Include="Views\Recipes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

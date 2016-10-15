@@ -29,5 +29,19 @@ namespace DishLish.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<DishLish.Models.Address> Addresses { get; set; }
+
+        public System.Data.Entity.DbSet<DishLish.Models.CurrentInventory> CurrentInventories { get; set; }
+
+        public System.Data.Entity.DbSet<DishLish.Models.Ingredient> Ingredients { get; set; }
+
+        public System.Data.Entity.DbSet<DishLish.Models.FavoriteRecipe> FavoriteRecipes { get; set; }
+
+        public System.Data.Entity.DbSet<DishLish.Models.Recipe> Recipes { get; set; }
+
+        public System.Data.Entity.DbSet<DishLish.Models.GroceryList> GroceryLists { get; set; }
+
+        public System.Data.Entity.DbSet<DishLish.Models.PantryOwner> PantryOwners { get; set; }
     }
 }
