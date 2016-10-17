@@ -52,11 +52,6 @@ footer ul li a {
     -webkit-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out;*/
 }
-
-#map_canvas {
-    height: 100%;
-    width: 100%;
-}
 /*footer ul li a:hover {
     color: rgb(242, 65, 184);
 }*/
