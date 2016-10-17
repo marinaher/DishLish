@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DishLish.Models.Map>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Find a grocery store or Farmer's Market near you!</h2>
+<div id="map_canvas" style="height: 722px;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArL5SAmuPeVtef1T__LfEaeTyMqJFpxNw&sensor=false" type="text/javascript"></script>
+
+<style>
+    #map_canvas img {
+        max-width: 100%;
+    }
+</style>
+
+@section scripts {
+<section class="scripts">
+
+    <script type="text/javascript">
+
+        function Initialize() {
+            google.maps.visualRefresh = true;
+            var currentLocation = new google.maps.LatLng();
+            var mapOptions = {
+                zoom: 14,
+                center: { lat: 43.038902, lng: -87.906471 },
+                mapTypeControl: true,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.TOP_CENTER
+                },
+                zoomControl: true,
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_CENTER
+                },
+                scaleControl: true,
+                streetViewControl: true,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                },
+                fullscreenControl: true
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        }
+        Initialize();
+    </script>
+</section>
+}
