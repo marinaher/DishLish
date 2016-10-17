@@ -235,6 +235,14 @@
     <Compile Include="Migrations\201610162002464_added more things.Designer.cs">
       <DependentUpon>201610162002464_added more things.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610171641561_added first and last name and dob to acct view model.cs" />
+    <Compile Include="Migrations\201610171641561_added first and last name and dob to acct view model.Designer.cs">
+      <DependentUpon>201610171641561_added first and last name and dob to acct view model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610171703025_updated first last name and dob in models and controllers.cs" />
+    <Compile Include="Migrations\201610171703025_updated first last name and dob in models and controllers.Designer.cs">
+      <DependentUpon>201610171703025_updated first last name and dob in models and controllers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -372,6 +380,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610162002464_added more things.resx">
       <DependentUpon>201610162002464_added more things.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610171641561_added first and last name and dob to acct view model.resx">
+      <DependentUpon>201610171641561_added first and last name and dob to acct view model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610171703025_updated first last name and dob in models and controllers.resx">
+      <DependentUpon>201610171703025_updated first last name and dob in models and controllers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

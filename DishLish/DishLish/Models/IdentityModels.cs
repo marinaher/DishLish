@@ -3,12 +3,17 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 
 namespace DishLish.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DOB { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -30,20 +35,20 @@ namespace DishLish.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<DishLish.Models.Address> Addresses { get; set; }
+        public DbSet<Address> Addresses { get; set; }
 
-        public System.Data.Entity.DbSet<DishLish.Models.CurrentInventory> CurrentInventories { get; set; }
+        public DbSet<CurrentInventory> CurrentInventories { get; set; }
 
-        public System.Data.Entity.DbSet<DishLish.Models.Ingredient> Ingredients { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
 
-        public System.Data.Entity.DbSet<DishLish.Models.FavoriteRecipe> FavoriteRecipes { get; set; }
+        public DbSet<FavoriteRecipe> FavoriteRecipes { get; set; }
 
-        public System.Data.Entity.DbSet<DishLish.Models.Recipe> Recipes { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
 
-        public System.Data.Entity.DbSet<DishLish.Models.GroceryList> GroceryLists { get; set; }
+        public DbSet<GroceryList> GroceryLists { get; set; }
 
-        public System.Data.Entity.DbSet<DishLish.Models.PantryOwner> PantryOwners { get; set; }
+        public DbSet<PantryOwner> PantryOwners { get; set; }
 
-        public System.Data.Entity.DbSet<DishLish.Models.Map> Maps { get; set; }
+        public DbSet<Map> Maps { get; set; }
     }
 }
