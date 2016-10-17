@@ -15,24 +15,6 @@ namespace DishLish.Controllers
             return View();
         }
 
-        public WebResponse GetThings()
-        {
-
-            string a = "http://www.recipepuppy.com/api/?";
-            WebRequest request = WebRequest.Create(a);
-            List<string> things = new List<string>();
-            things.Add("pepper");
-            things.Add("garlic");
-            things.Add("eggs");
-
-            WebResponse response = request.GetResponse();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string responseFromServer = reader.ReadToEnd();
-            Console.WriteLine(responseFromServer);
-            return response;
-        }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

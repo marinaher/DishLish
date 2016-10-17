@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 using System.Linq;
 using System.Web;
+using System.IO;
 
 namespace DishLish.Models
 {
@@ -46,5 +48,23 @@ namespace DishLish.Models
         public int Rating { get; set; }
 
         public ICollection Ingredient { get; set; }
+
+        public WebResponse GetRecipes()
+        {
+
+            string url = "http://www.recipepuppy.com/api/?";
+            WebRequest request = WebRequest.Create(url);
+            List<string> recipeList = new List<string>();
+            recipeList.Add("pepper");
+            recipeList.Add("garlic");
+            recipeList.Add("eggs");
+
+            WebResponse response = request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string responseFromServer = reader.ReadToEnd();
+            Console.WriteLine(responseFromServer);
+            return response;
+        }
     }
 }
