@@ -1,14 +1,16 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
+﻿using DishLish.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using DishLish.Models;
+using RestSharp;
+using RestSharp.Authenticators;
+using System.Threading.Tasks;
+using System;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace DishLish.Controllers
 {
@@ -142,6 +144,35 @@ namespace DishLish.Controllers
             return View();
         }
 
+        public class Recaptcha
+        {
+            public static string Validate(string EncodedResponse)
+            {
+                var client = new System.Net.WebClient();
+                string PrivateKey = "6LcPZwkUAAAAAEJ8B_Y-0g6gUzvGROsbOmEMw9yD";
+                var GoogleReplay = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", PrivateKey, EncodedResponse));
+                var captchaResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<Recaptcha>(GoogleReplay);
+                return captchaResponse.Success;
+            }
+
+            [JsonProperty("success")]
+            public string Success
+            {
+                get { return m_Success; }
+                set { m_Success = value; }
+            }
+
+            private string m_Success;
+            [JsonProperty("error-codes")]
+            public List<string> ErrorCodes
+            {
+                get { return m_ErrorCodes; }
+                set { m_ErrorCodes = value; }
+            }
+
+            private List<string> m_ErrorCodes;
+        }
+
         //
         // POST: /Account/Register
         [HttpPost]
@@ -151,27 +182,38 @@ namespace DishLish.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                string EncodedResponse = Request.Form["g-Recaptcha-Response"];
+                bool IsCaptchaValid = (Recaptcha.Validate(EncodedResponse) == "True" ? true : false);
+
+                if (IsCaptchaValid == true)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                    var result = await UserManager.CreateAsync(user, model.Password);
+                    if (result.Succeeded)
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    return RedirectToAction("Index", "Home");
+                        // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                        // Send an email with this link
+                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    AddErrors(result);
                 }
-                AddErrors(result);
+                    if (IsCaptchaValid == false)
+                    {
+                        CaptchaError();
+                        Dispose(true);
+                        return View(model);
+
+                    }
             }
-
-            // If we got this far, something failed, redisplay form
-            return View(model);
+                // If we got this far, something failed, redisplay form
+                return View(model);
         }
-
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -422,10 +464,29 @@ namespace DishLish.Controllers
 
             base.Dispose(disposing);
         }
+        public static IRestResponse SendSimpleMessage(string email, string name, string message)
+        {
+            RestClient client = new RestClient();
+            client.BaseUrl =  new Uri("https://api.mailgun.net/v3");
+            client.Authenticator =
+                new HttpBasicAuthenticator("api", "key-aa000e188c8f30116df84fd3ca60c48a");
+            RestRequest request = new RestRequest();
+            request.AddParameter("domain",
+                                "sandboxf1618580d77e42c6ade85a75977b573c.mailgun.org", ParameterType.UrlSegment);
+            request.Resource = "{domain}/messages";
+            request.AddParameter("from", "Mailgun Sandbox <postmaster@sandboxf1618580d77e42c6ade85a75977b573c.mailgun.org>");
+            request.AddParameter("to", email);
+            request.AddParameter("subject", string.Format("Hello {0}", name));
+            request.AddParameter("text", "Thank you for registering! I hope you enjoy DishLish.");
+            request.Method = Method.POST;
 
+            IRestResponse response = client.Execute(request);
+            return response;
+        }
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
+        private string errorMessage;
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -441,6 +502,11 @@ namespace DishLish.Controllers
             {
                 ModelState.AddModelError("", error);
             }
+        }
+        private void CaptchaError()
+        {
+            errorMessage = "Complete Recaptcha";
+            ModelState.AddModelError("", errorMessage);
         }
 
         private ActionResult RedirectToLocal(string returnUrl)

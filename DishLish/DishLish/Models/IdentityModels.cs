@@ -43,5 +43,7 @@ namespace DishLish.Models
         public System.Data.Entity.DbSet<DishLish.Models.GroceryList> GroceryLists { get; set; }
 
         public System.Data.Entity.DbSet<DishLish.Models.PantryOwner> PantryOwners { get; set; }
+
+        public System.Data.Entity.DbSet<DishLish.Models.Map> Maps { get; set; }
     }
 }

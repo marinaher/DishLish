@@ -77,6 +77,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -213,14 +217,23 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
     <Compile Include="Controllers\PantryOwnersController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610142126013_Added Models.cs" />
-    <Compile Include="Migrations\201610142126013_Added Models.Designer.cs">
-      <DependentUpon>201610142126013_Added Models.cs</DependentUpon>
+    <Compile Include="Migrations\201610152355414_removed lat and long from map model.cs" />
+    <Compile Include="Migrations\201610152355414_removed lat and long from map model.Designer.cs">
+      <DependentUpon>201610152355414_removed lat and long from map model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610160356315_rmv%27d all lats and longs.cs" />
+    <Compile Include="Migrations\201610160356315_rmv%27d all lats and longs.Designer.cs">
+      <DependentUpon>201610160356315_rmv%27d all lats and longs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610162002464_added more things.cs" />
+    <Compile Include="Migrations\201610162002464_added more things.Designer.cs">
+      <DependentUpon>201610162002464_added more things.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -231,6 +244,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Map.cs" />
     <Compile Include="Models\PantryOwner.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,6 +253,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -331,6 +346,11 @@
     <Content Include="Views\Recipes\Details.cshtml" />
     <Content Include="Views\Recipes\Edit.cshtml" />
     <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\Maps\Create.cshtml" />
+    <Content Include="Views\Maps\Delete.cshtml" />
+    <Content Include="Views\Maps\Details.cshtml" />
+    <Content Include="Views\Maps\Edit.cshtml" />
+    <Content Include="Views\Maps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,8 +364,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610142126013_Added Models.resx">
-      <DependentUpon>201610142126013_Added Models.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610152355414_removed lat and long from map model.resx">
+      <DependentUpon>201610152355414_removed lat and long from map model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610160356315_rmv%27d all lats and longs.resx">
+      <DependentUpon>201610160356315_rmv%27d all lats and longs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610162002464_added more things.resx">
+      <DependentUpon>201610162002464_added more things.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

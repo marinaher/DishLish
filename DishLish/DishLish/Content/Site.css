@@ -18,3 +18,53 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* == Footer == */
+#footer {
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 49px;
+}
+footer .row {
+    width: 100%;
+    margin: 0 auto;
+}
+footer p {
+    padding: 20px 0;
+    margin-left: -20px;
+    margin-top: 13px;
+}
+footer ul {
+    float: right;
+    margin-top: 24px;
+}
+footer ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 15px;
+}
+footer ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 25px;
+    /*-moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;*/
+}
+
+#map_canvas {
+    height: 100%;
+    width: 100%;
+}
+/*footer ul li a:hover {
+    color: rgb(242, 65, 184);
+}*/
+/*footer a#go-top {
+    text-decoration: none;
+    color: rgb(123, 47, 169);
+    font-size: 45px;
+    float: right;
+    margin-right: -60px;
+    margin-top: 10px;
+}*/
