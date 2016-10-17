@@ -26,15 +26,6 @@ namespace DishLish.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DOB { get; set; }
 
-        [Display(Name = "Full Name")]
-        public string FullName
-        {
-            get
-            {
-                return FirstName + ", " + LastName;
-            }
-        }
-
         [ForeignKey("Address")]
         public int AddressID { get; set; }
         public Address Address { get; set; }

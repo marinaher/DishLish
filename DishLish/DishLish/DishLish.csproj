@@ -244,6 +244,10 @@
     <Compile Include="Migrations\201610171703025_updated first last name and dob in models and controllers.Designer.cs">
       <DependentUpon>201610171703025_updated first last name and dob in models and controllers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610171902369_rmvd full name from pantryowner model.cs" />
+    <Compile Include="Migrations\201610171902369_rmvd full name from pantryowner model.Designer.cs">
+      <DependentUpon>201610171902369_rmvd full name from pantryowner model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -388,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610171703025_updated first last name and dob in models and controllers.resx">
       <DependentUpon>201610171703025_updated first last name and dob in models and controllers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610171902369_rmvd full name from pantryowner model.resx">
+      <DependentUpon>201610171902369_rmvd full name from pantryowner model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
