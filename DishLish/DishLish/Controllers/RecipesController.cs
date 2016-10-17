@@ -10,7 +10,7 @@ using DishLish.Models;
 
 namespace DishLish.Controllers
 {
-    public class RecipesController : Controller
+    public class RecipesController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
