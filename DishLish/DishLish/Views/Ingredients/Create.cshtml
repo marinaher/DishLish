@@ -3,10 +3,17 @@
 @{
     ViewBag.Title = "Create";
 }
-
+<html>
+<head>
+    <title>Ingredients</title>
+    <link href="~/Content/onepage-scroll.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.onepage-scroll.js" type="text/javascript"></script>
+</head>
+<body>
 <h2>Ingredients</h2>
+    <div class="main">
 
-
+    </div>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -18,10 +25,10 @@
         <ul id="slide-out" class="side-nav pagination">
             <li>Select a Category:</li>
             <li><div class="divider"></div></li>
-            <li><a href="#!">Condiment</a></li>
+            <li><a href="#!">Dairy</a></li>
             <li><a href="#!">Fruit</a></li>
+            <li><a href="#!">Grains</a></li>
             <li><a href="#!">Meat</a></li>
-            <li><a href="#!">Pantry Item</a></li>
             <li><a href="#!">Vegetable</a></li>
         </ul>
 
@@ -57,4 +64,7 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/scripts.js" type="text/javascript"></script>
 }
+</body>
+</html>

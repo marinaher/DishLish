@@ -5,6 +5,7 @@ body {
 }
 
 .body-content {
+    padding-top: 55px;
     padding-left: 15px;
     padding-right: 15px;
 }
