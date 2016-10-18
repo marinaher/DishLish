@@ -224,29 +224,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610152355414_removed lat and long from map model.cs" />
-    <Compile Include="Migrations\201610152355414_removed lat and long from map model.Designer.cs">
-      <DependentUpon>201610152355414_removed lat and long from map model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610160356315_rmv%27d all lats and longs.cs" />
-    <Compile Include="Migrations\201610160356315_rmv%27d all lats and longs.Designer.cs">
-      <DependentUpon>201610160356315_rmv%27d all lats and longs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610162002464_added more things.cs" />
-    <Compile Include="Migrations\201610162002464_added more things.Designer.cs">
-      <DependentUpon>201610162002464_added more things.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610171641561_added first and last name and dob to acct view model.cs" />
-    <Compile Include="Migrations\201610171641561_added first and last name and dob to acct view model.Designer.cs">
-      <DependentUpon>201610171641561_added first and last name and dob to acct view model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610171703025_updated first last name and dob in models and controllers.cs" />
-    <Compile Include="Migrations\201610171703025_updated first last name and dob in models and controllers.Designer.cs">
-      <DependentUpon>201610171703025_updated first last name and dob in models and controllers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610171902369_rmvd full name from pantryowner model.cs" />
-    <Compile Include="Migrations\201610171902369_rmvd full name from pantryowner model.Designer.cs">
-      <DependentUpon>201610171902369_rmvd full name from pantryowner model.cs</DependentUpon>
+    <Compile Include="Migrations\201610181525046_updatingMigrations.cs" />
+    <Compile Include="Migrations\201610181525046_updatingMigrations.Designer.cs">
+      <DependentUpon>201610181525046_updatingMigrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -393,23 +373,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610152355414_removed lat and long from map model.resx">
-      <DependentUpon>201610152355414_removed lat and long from map model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610160356315_rmv%27d all lats and longs.resx">
-      <DependentUpon>201610160356315_rmv%27d all lats and longs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610162002464_added more things.resx">
-      <DependentUpon>201610162002464_added more things.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610171641561_added first and last name and dob to acct view model.resx">
-      <DependentUpon>201610171641561_added first and last name and dob to acct view model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610171703025_updated first last name and dob in models and controllers.resx">
-      <DependentUpon>201610171703025_updated first last name and dob in models and controllers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610171902369_rmvd full name from pantryowner model.resx">
-      <DependentUpon>201610171902369_rmvd full name from pantryowner model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610181525046_updatingMigrations.resx">
+      <DependentUpon>201610181525046_updatingMigrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,35 +3,100 @@
 @{
     ViewBag.Title = "Create";
 }
-<html>
-<head>
-    <title>Ingredients</title>
-    <link href="~/Content/onepage-scroll.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery.onepage-scroll.js" type="text/javascript"></script>
-</head>
-<body>
-<h2>Ingredients</h2>
-    <div class="main">
-
-    </div>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <p>Check the checkboxes for ingredients that are currently in your home then select the quantity.</p>
-        <hr />
 
-        <ul id="slide-out" class="side-nav pagination">
-            <li>Select a Category:</li>
-            <li><div class="divider"></div></li>
-            <li><a href="#!">Dairy</a></li>
-            <li><a href="#!">Fruit</a></li>
-            <li><a href="#!">Grains</a></li>
-            <li><a href="#!">Meat</a></li>
-            <li><a href="#!">Vegetable</a></li>
-        </ul>
+<html>
+<head>
+    <title>Ingredients</title>
+    <script src="~/Scripts/jquery.onepage-scroll.js" type="text/javascript"></script>
+    <link href="~/Content/onepage-scroll.css" rel="stylesheet" />
+</head>
+<body>
+    <ul class="onepage-pagination">
+        <li><a data-index="1" href="#1" class="active"></a></li>
+        <li><a data-index="2" href="#2" class=""></a></li>
+        <li><a data-index="3" href="#3" class=""></a></li>
+        <li><a data-index="4" href="#4" class=""></a></li>
+        <li><a data-index="5" href="#5" class=""></a></li>
+        <li><a data-index="6" href="#6" class=""></a></li>
+    </ul>
+    <div class="main onepage-wrapper">
+        <section class="page1 section active">
+            <div class="page_container">
+                <h1>Ingredients</h1>
+                <p>Check the checkboxes for ingredients that are currently in your home then select the quantity.</p>
+            </div>
+        </section>
+        <section class="page2 section" data-index="2">
+            <div class="page_container">
+                <h3>Dairy Products</h3>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="searchable-container">
+                            <div class="items col-xs-5 col-sm-5 col-md-4 col-lg-4">
+                                <div class="info-block block-info clearfix">
+                                    <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                                        <div class="bizcontent">
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                 Butter
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                Cheese
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                Milk
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                Heavy Cream
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                Pudding
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                Yogurt
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page3 section" data-index="3">
+            <div class="page_container">
+                <h3>Fruit Products</h3>
 
+            </div>
+        </section>
+        <section class="page4 section" data-index="4">
+            <div class="page_container">
+                <h3>Grain Products</h3>
+
+            </div>
+        </section>
+        <section class="page5 section" data-index="5">
+            <div class="page_container">
+                <h3>Meat Products</h3>
+
+            </div>
+        </section>
+        <section class="page6 section" data-index="6">
+            <div class="page_container">
+                <h3>Vegetable Products</h3>
+
+            </div>
+        </section>
+    </div>
 
         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -55,12 +120,8 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>*@
-    </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@*<div>@Html.ActionLink("Back to List", "Index")</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -68,3 +129,4 @@
 }
 </body>
 </html>
+}

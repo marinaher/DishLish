@@ -7,13 +7,13 @@ namespace DishLish.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class rmvdalllatsandlongs : IMigrationMetadata
+    public sealed partial class updatingMigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(rmvdalllatsandlongs));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatingMigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610160356315_rmv'd all lats and longs"; }
+            get { return "201610181525046_updatingMigrations"; }
         }
         
         string IMigrationMetadata.Source
