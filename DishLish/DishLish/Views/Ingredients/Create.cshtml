@@ -10,12 +10,12 @@
 <html>
 <head>
     <title>Ingredients</title>
-    <script src="~/Scripts/jquery.onepage-scroll.js"></script>
-    <link href="~/Content/onepage-scroll.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <h1>Ingredients</h1>
-    <p>Check the checkboxes for ingredients that are currently in your home then select the quantity.</p>
+    <p>Select ingredients that you currently have.</p>
     <div class="row">
         <div class="form-group">
             <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10">
@@ -34,21 +34,26 @@
                         </td>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CheddarCheese"> Cheddar Cheese
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CottageCheese"> Cottage Cheese
                             </label>
                         </td>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CoffeeCream"> Coffee Cream
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CreamCheese"> Cream Cheese
                             </label>
                         </td>
+                        <td>
+                            <label class="btn btn-default">
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cheese"> Cheese
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>
                             <label class="btn btn-default">
                                 <input type="checkbox" name="var_id[]" autocomplete="off" value="Milk"> Milk
                             </label>
                         </td>
-                    </tr>
-                    <tr>
                         <td>
                             <label class="btn btn-default">
                                 <input type="checkbox" name="var_id[]" autocomplete="off" value="Half&amp;Half"> Half &amp; Half
@@ -66,12 +71,14 @@
                         </td>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Sharp"> Sharp Cheddar Cheese
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Yogurt"> Yogurt
                             </label>
                         </td>
+                    </tr>
+                    <tr>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Yogurt"> Yogurt
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
                             </label>
                         </td>
                     </tr>
@@ -135,6 +142,13 @@
                         <td>
                             <label class="btn btn-default">
                                 <input type="checkbox" name="var_id[]" autocomplete="off" value="Raspberry"> Raspberry
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="btn btn-default">
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
                             </label>
                         </td>
                     </tr>
@@ -279,6 +293,13 @@
                         <td>
                             <label class="btn btn-default">
                                 <input type="checkbox" name="var_id[]" autocomplete="off" value="WholeWheatBread"> Whole Wheat Bread
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="btn btn-default">
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
                             </label>
                         </td>
                     </tr>
@@ -453,6 +474,13 @@
                             </label>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <label class="btn btn-default">
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
+                            </label>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -460,7 +488,7 @@
     <div class="row">
         <div class="form-group">
             <div class="col-xs-2 col-sm-3 col-md-4 col-lg-5">
-                <h2>DUPLICATE TEST Vegetable</h2>
+                <h2>Vegetable</h2>
                 <table>
                     <tr>
                         <td>
@@ -575,6 +603,7 @@
                             <label class="btn btn-default">
                                 <input type="checkbox" name="var_id[]" autocomplete="off" value="Habanero"> Habanero
                             </label>
+                        </td>
                         <td>
                             <label class="btn btn-default">
                                 <input type="checkbox" name="var_id[]" autocomplete="off" value="Jalapeno"> Jalapeno
@@ -594,7 +623,6 @@
                             <label class="btn btn-default">
                                 <input type="checkbox" name="var_id[]" autocomplete="off" value="Mushroom"> Mushroom
                             </label>
-                        </td>
                         </td>
                     </tr>
                     <tr>
@@ -673,6 +701,13 @@
                             </label>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <label class="btn btn-default">
+                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
+                            </label>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -682,6 +717,8 @@
         <script src="~/Scripts/scripts.js"></script>
     }
 </body>
+</html>
+}
 
         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -708,5 +745,3 @@
 
 @*<div>@Html.ActionLink("Back to List", "Index")</div>*@
 
-</html>
-}
