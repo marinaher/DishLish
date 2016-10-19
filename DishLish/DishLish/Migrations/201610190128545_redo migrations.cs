@@ -3,7 +3,7 @@ namespace DishLish.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class updatingMigrations : DbMigration
+    public partial class redomigrations : DbMigration
     {
         public override void Up()
         {
@@ -36,8 +36,9 @@ namespace DishLish.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        IngredientName = c.String(),
                         Category = c.String(),
+                        IsSelected = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             

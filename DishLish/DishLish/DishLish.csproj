@@ -224,17 +224,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610181525046_updatingMigrations.cs" />
-    <Compile Include="Migrations\201610181525046_updatingMigrations.Designer.cs">
-      <DependentUpon>201610181525046_updatingMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610182103071_add migration1.cs" />
-    <Compile Include="Migrations\201610182103071_add migration1.Designer.cs">
-      <DependentUpon>201610182103071_add migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610190126111_added IsSelected bool to ingredient model.cs" />
-    <Compile Include="Migrations\201610190126111_added IsSelected bool to ingredient model.Designer.cs">
-      <DependentUpon>201610190126111_added IsSelected bool to ingredient model.cs</DependentUpon>
+    <Compile Include="Migrations\201610190128545_redo migrations.cs" />
+    <Compile Include="Migrations\201610190128545_redo migrations.Designer.cs">
+      <DependentUpon>201610190128545_redo migrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -381,14 +373,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610181525046_updatingMigrations.resx">
-      <DependentUpon>201610181525046_updatingMigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610182103071_add migration1.resx">
-      <DependentUpon>201610182103071_add migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610190126111_added IsSelected bool to ingredient model.resx">
-      <DependentUpon>201610190126111_added IsSelected bool to ingredient model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610190128545_redo migrations.resx">
+      <DependentUpon>201610190128545_redo migrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
