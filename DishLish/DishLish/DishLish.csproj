@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201610182103071_add migration1.Designer.cs">
       <DependentUpon>201610182103071_add migration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610190126111_added IsSelected bool to ingredient model.cs" />
+    <Compile Include="Migrations\201610190126111_added IsSelected bool to ingredient model.Designer.cs">
+      <DependentUpon>201610190126111_added IsSelected bool to ingredient model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -382,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610182103071_add migration1.resx">
       <DependentUpon>201610182103071_add migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610190126111_added IsSelected bool to ingredient model.resx">
+      <DependentUpon>201610190126111_added IsSelected bool to ingredient model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
