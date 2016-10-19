@@ -40,28 +40,7 @@ textarea {
       z-index: 3;
     }
 .main section  {
-    overflow: hidden;
-}
-.main section > img {
-    position: absolute;
-    max-width: 100%;
-    z-index: 1;
-}
-.main section.page1 {
-    background:rgb(230, 217, 200);
-}
-.main section.page1 h1 {
-    text-align: left;
-    padding: 0;
-    margin-bottom: 15px;
-    font-size: 70px;
-    color: black;
-}
-.main section.page1 h2 {
-    color: rgba(0,0,0,0.85);
-    text-align: center;
-    width: 435px;
-    line-height: 160%;
+    /*overflow: hidden;*/
 }
 .main section .page_container .btns {
     clear: both;
@@ -72,62 +51,70 @@ textarea {
 .main section .page_container .btns a{
     text-align: center;
 }
-.main section.page2 {
-    background: #555557;
-}
-.main section.page2 > img {
-    position: absolute;
-    top: -300px;
-    left: 50%;
-    margin-left: -1095px;
-}
-.main section.page2 .page_container {
-    margin-top: 240px;
-    overflow: hidden;
-}
-.main section.page2 h1 {
-    text-align: center;
-    padding: 0;
-    margin-bottom: 15px;
-    font-size: 50px;
-    letter-spacing: -1px;
-    color: white;
-}
-.main section.page2 h2 {
-    color: rgba(255,255,255,0.85);
-    text-align: center;
-    line-height: 160%;
-    font-weight: 100;
-}
-.viewing-page-2 .back{
-    background: rgba(0, 0, 0, 0.25);
-    color: #FFF;
+    /* -- Page 1 -- */
+    .main section.page1 {
+        background:rgb(230, 217, 200);
     }
-.main section.page3 .page_container {
-      overflow: hidden;
-      width: 500px;
-      right: -285px;
+    .main section.page1 h1 {
+        text-align: left;
+        padding: 0;
+        margin-bottom: 15px;
+        font-size: 70px;
+        color: black;
     }
-.main section.page3 .page_container {
-    overflow: hidden;
-    width: 500px;
-    right: -285px;
-}
-.main section.page3 h1 {
-    text-align: left;
-    padding: 0;
-    margin-bottom: 0;
-    font-size: 70px;
-    letter-spacing: -1px;
-    color: black;
-}
-.main section.page3 h2 {
-    color: rgba(0,0,0,0.85);
-    text-align: left;
-    line-height: 160%;
-    font-weight: 100;
-    font-size: 21px;
-}
+    /* -- Page 2 -- */
+    .main section.page1 h2 {
+        color: rgba(0,0,0,0.85);
+        text-align: center;
+        width: 435px;
+        line-height: 160%;
+    }
+    .main section.page2 {
+        background: #555557;
+    }
+    .main section.page2 .page_container {
+        margin-top: 240px;
+        overflow: hidden;
+    }
+    .main section.page2 h1 {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 15px;
+        font-size: 50px;
+        letter-spacing: -1px;
+        color: white;
+    }
+    .main section.page2 h2 {
+        color: rgba(255,255,255,0.85);
+        text-align: center;
+        line-height: 160%;
+        font-weight: 100;
+    }
+    .viewing-page-2 .back{
+        background: rgba(0, 0, 0, 0.25);
+        color: #FFF;
+    }
+    /* -- Page 3 -- */
+    .main section.page3 .page_container {
+          overflow: hidden;
+          width: 500px;
+          right: -285px;
+        }
+    .main section.page3 h1 {
+        text-align: left;
+        padding: 0;
+        margin-bottom: 0;
+        font-size: 70px;
+        letter-spacing: -1px;
+        color: black;
+    }
+    .main section.page3 h2 {
+        color: rgba(0,0,0,0.85);
+        text-align: left;
+        line-height: 160%;
+        font-weight: 100;
+        font-size: 21px;
+    }
 .searchable-container{margin:100px 0 0 0}
 .searchable-container label.btn-default.active{background-color:#b50d50;color:white}
 .searchable-container label.btn-default{width:90%;border:1px solid #efefef;margin:5px; box-shadow: 1px 1px 1px 0 #ccc2c8;}

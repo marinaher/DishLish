@@ -3,10 +3,19 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Find a grocery store or Farmer's Market near you!</h2>
-<div id="map_canvas" style="height: 722px; max-width: 100%;"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArL5SAmuPeVtef1T__LfEaeTyMqJFpxNw&sensor=false" type="text/javascript"></script>
+
+<style>
+    
+#map_canvas{
+   position: absolute;
+   top:0; left:0; bottom:0; right:0;
+   height: 100%; 
+   max-width: 100%;
+}
+</style>
+<h2>Find a grocery store or Farmer's Market near you!</h2>
+<div id="map_canvas"></div>
 
 @section scripts {
 <section class="scripts">
@@ -64,6 +73,11 @@
             }
         }
         Initialize();
+    </script>
+    <script>
+        $(function () {
+            $("header, footer").hide();
+        });
     </script>
 </section>
 }
