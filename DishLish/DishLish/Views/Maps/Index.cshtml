@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
 }
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArL5SAmuPeVtef1T__LfEaeTyMqJFpxNw&sensor=false" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArL5SAmuPeVtef1T__LfEaeTyMqJFpxNw&sensor=false" type="text/javascript" onerror="mapLoadError()"></script>
 
 <style>
     
@@ -73,6 +73,14 @@
             }
         }
         Initialize();
+    </script>
+    <script>
+        var mapLoadError = function () {
+            console.log("in mapLoadError"),
+            $map = $("#map"),
+            $map.addClass("error mapError"),
+            $map.html("Map is unavailable as the map could not be loaded.</p><p>Please try again later.</p>");
+        }
     </script>
     <script>
         $(function () {
