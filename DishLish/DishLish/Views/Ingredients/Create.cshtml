@@ -3,751 +3,715 @@
 @{
     ViewBag.Title = "Create";
 }
-@using (Html.BeginForm()) 
-{
     @Html.AntiForgeryToken()
 
-<html>
-<head>
-    <title>Ingredients</title>
-    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-    <h1>Ingredients</h1>
-    <p>Select ingredients that you currently have.</p>
-    <div class="row">
-        <div class="form-group">
-            <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10">
-                <h3>Dairy</h3>
-                <table>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="BlueCheese"> Blue Cheese
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Butter"> Butter
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CottageCheese"> Cottage Cheese
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CreamCheese"> Cream Cheese
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cheese"> Cheese
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Milk"> Milk
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Half&amp;Half"> Half &amp; Half
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="HeavyCream"> Heavy Cream
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Pudding"> Pudding
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Yogurt"> Yogurt
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
-                            </label>
-                        </td>
-                    </tr>
-                </table>
+    <html>
+    <head>
+        <title>Ingredients</title>
+        <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Ingredients</h1>
+        <p>Select ingredients that you currently have.</p>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10" id="dairy">
+                    <h3>Dairy</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="BlueCheese"> Blue Cheese
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Butter"> Butter
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="CottageCheese"> Cottage Cheese
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="CreamCheese"> Cream Cheese
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Cheese"> Cheese
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Milk"> Milk
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Half&amp;Half"> Half &amp; Half
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="HeavyCream"> Heavy Cream
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Pudding"> Pudding
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Yogurt"> Yogurt
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10">
-                <h3>Fruit</h3>
-                <table>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Apple"> Apple
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="AsianPear"> Asian Pear
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Avocado"> Avocado
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Banana"> Banana
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Blueberry"> Blueberry
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Grape"> Grape
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Grapefruit"> Grapefruit
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Orange"> Orange
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Pomegranate"> Pomegranate
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Raspberry"> Raspberry
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
-                            </label>
-                        </td>
-                    </tr>
-                </table>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10" id="fruit">
+                    <h3>Fruit</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Apple"> Apple
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="AsianPear"> Asian Pear
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Avocado"> Avocado
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Banana"> Banana
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Blueberry"> Blueberry
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Grape"> Grape
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Grapefruit"> Grapefruit
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Orange"> Orange
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Pomegranate"> Pomegranate
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Raspberry"> Raspberry
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10">
-                <h3>Grain</h3>
-                <table>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Crackers"> Crackers
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cornmeal"> Cornmeal
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CornTortillas"> Corn Tortillas
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="FlourTortillas"> Flour Tortillas
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cereal"> Cereal
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Couscous"> Couscous
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Spaghetti"> Noodles - Spaghetti
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="AngelHairPasta"> Noodles - Angel Hair Pasta
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Ramen"> Noodles - Ramen
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Fettuccine"> Noodles - Fettuccine
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Macaroni"> Noodles - Macaroni
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Oatmeal"> Oatmeal
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Pretzels"> Pretzels
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Popcorn"> Popcorn
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Quinoa"> Quinoa
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="BasmatiRice"> Rice - Basmati
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="BrownRice"> Rice - Brown
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="WhiteRice"> Rice - White
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="WildRice"> Rice - Wild
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="RolledOats"> Rolled Oats
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Popcorn"> Popcorn
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Udon"> Udon Noodles
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Vermicelli"> Vermicelli Noodles
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="WhiteBread"> White Bread
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="WholeWheatBread"> Whole Wheat Bread
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
-                            </label>
-                        </td>
-                    </tr>
-                </table>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10" id="grain">
+                    <h3>Grain</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Crackers"> Crackers
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Cornmeal"> Cornmeal
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="CornTortillas"> Corn Tortillas
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="FlourTortillas"> Flour Tortillas
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Cereal"> Cereal
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Couscous"> Couscous
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Spaghetti"> Noodles - Spaghetti
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="AngelHairPasta"> Noodles - Angel Hair Pasta
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Ramen"> Noodles - Ramen
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Fettuccine"> Noodles - Fettuccine
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Macaroni"> Noodles - Macaroni
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Oatmeal"> Oatmeal
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Pretzels"> Pretzels
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Popcorn"> Popcorn
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Quinoa"> Quinoa
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="BasmatiRice"> Rice - Basmati
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="BrownRice"> Rice - Brown
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="WhiteRice"> Rice - White
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="WildRice"> Rice - Wild
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="RolledOats"> Rolled Oats
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Popcorn"> Popcorn
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Udon"> Udon Noodles
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Vermicelli"> Vermicelli Noodles
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="WhiteBread"> White Bread
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="WholeWheatBread"> Whole Wheat Bread
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10">
-                <h3>Meat</h3>
-                <table>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="WholeChicken"> Chicken - Whole
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenWings"> Chicken - Wings
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenBreast"> Chicken - Breast
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenThighs"> Chicken - Thighs
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenDrumsticks"> Chicken - Drumsticks
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="MockChickenLegs"> Mock Chicken Legs
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="ChuckRoast"> Beef Chuck Roast
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="FlankSteak"> Beef - Flank Steak
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Shank"> Beef - Shank
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="BeefShortRibs"> Beef - Shortribs
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="RibeyeSteak"> Beef - Ribeye Steak
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="NYSteak"> Beef - NY Steak
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Tenderloin"> Beef - Tenderloin
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="StewMeat"> Beef - Stew Meat
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="SpareRibs"> Beef - Spare Ribs
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="RoundSteak"> Beef - Round Steak
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Sirloin"> Beef - Sirloin
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Rump"> Beef - Rump
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="GroundBeef"> Ground Beef
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="GroundPork"> Ground Pork
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="GroundTurkey"> Ground Turkey
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Bacon"> Bacon
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="PorkBelly"> Pork Belly
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="PorkChops"> Pork Chops
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Porkloin"> Pork Loin
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="PorkSpareRibs"> Pork - Spare Ribs
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Fish"> Fish
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Tilapia"> Fish - Tilapia
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Salmon"> Fish - Salmon
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Shrimp"> Shrimp
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
-                            </label>
-                        </td>
-                    </tr>
-                </table>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3 col-sm-5 col-md-8 col-lg-10" id="meat">
+                    <h3>Meat</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="WholeChicken"> Chicken - Whole
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenWings"> Chicken - Wings
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenBreast"> Chicken - Breast
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenThighs"> Chicken - Thighs
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="ChickenDrumsticks"> Chicken - Drumsticks
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="MockChickenLegs"> Mock Chicken Legs
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="ChuckRoast"> Beef Chuck Roast
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="FlankSteak"> Beef - Flank Steak
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Shank"> Beef - Shank
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="BeefShortRibs"> Beef - Shortribs
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="RibeyeSteak"> Beef - Ribeye Steak
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="NYSteak"> Beef - NY Steak
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Tenderloin"> Beef - Tenderloin
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="StewMeat"> Beef - Stew Meat
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="SpareRibs"> Beef - Spare Ribs
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="RoundSteak"> Beef - Round Steak
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Sirloin"> Beef - Sirloin
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Rump"> Beef - Rump
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="GroundBeef"> Ground Beef
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="GroundPork"> Ground Pork
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="GroundTurkey"> Ground Turkey
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Bacon"> Bacon
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="PorkBelly"> Pork Belly
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="PorkChops"> Pork Chops
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Porkloin"> Pork Loin
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="PorkSpareRibs"> Pork - Spare Ribs
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Fish"> Fish
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Tilapia"> Fish - Tilapia
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Salmon"> Fish - Salmon
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Shrimp"> Shrimp
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <div class="col-xs-2 col-sm-3 col-md-4 col-lg-5">
-                <h2>Vegetable</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Artichoke"> Artichoke
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Asparagus"> Asparagus
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="BeanSprouts"> Bean sprouts
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="GreenBeans"> Green beans
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="BokChoy"> Bok Choy
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Broccoli"> Broccoli
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="BrusselsSprouts"> Brussels Sprouts
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cabbage"> Cabbage
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Carrot"> Carrot
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cauliflower"> Cauliflower
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Celery"> Celery
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Chard"> Chard
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="CollardGreens"> Collard Greens
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Chives"> Chives
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cilantro"> Cilantro
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Cucumber"> Cucumber
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Dill"> Dill
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Garlic"> Garlic
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Ginger"> Ginger
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="GreenOnion"> Green Onion
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Habanero"> Habanero
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Jalapeno"> Jalapeno
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Kale"> Kale
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="LemonGrass"> Lemon Grass
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Mushroom"> Mushroom
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Onion"> Onion
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Parsley"> Parsley
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Potato"> Potato
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Rosemary"> Rosemary
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Sage"> Sage
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Shallot"> Shallot
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Spinach"> Spinach
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Squash"> Squash
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="SweetPotato"> Sweet Potato
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Thyme"> Thyme
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Tomato"> Tomato
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Turnip"> Turnip
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Water Chestnut"> Water Chestnut
-                            </label>
-                        </td>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Zucchini"> Zucchini
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-default">
-                                <input type="checkbox" name="var_id[]" autocomplete="off" value="Other">&nbsp;<input type="text" name="Other..." placeholder="Other...">
-                            </label>
-                        </td>
-                    </tr>
-                </table>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-3 col-md-4 col-lg-5" id="vegetable">
+                    <h3>Vegetable</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Artichoke"> Artichoke
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Asparagus"> Asparagus
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="BeanSprouts"> Bean sprouts
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="GreenBeans"> Green beans
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="BokChoy"> Bok Choy
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Broccoli"> Broccoli
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="BrusselsSprouts"> Brussels Sprouts
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Cabbage"> Cabbage
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Carrot"> Carrot
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Cauliflower"> Cauliflower
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Celery"> Celery
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Chard"> Chard
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="CollardGreens"> Collard Greens
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Chives"> Chives
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Cilantro"> Cilantro
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Cucumber"> Cucumber
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Dill"> Dill
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Garlic"> Garlic
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Ginger"> Ginger
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="GreenOnion"> Green Onion
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Habanero"> Habanero
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Jalapeno"> Jalapeno
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Kale"> Kale
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="LemonGrass"> Lemon Grass
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Mushroom"> Mushroom
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Onion"> Onion
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Parsley"> Parsley
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Potato"> Potato
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Rosemary"> Rosemary
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Sage"> Sage
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Shallot"> Shallot
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Spinach"> Spinach
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Squash"> Squash
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="SweetPotato"> Sweet Potato
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Thyme"> Thyme
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Tomato"> Tomato
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Turnip"> Turnip
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Water Chestnut"> Water Chestnut
+                                </label>
+                            </td>
+                            <td>
+                                <label class="btn btn-default">
+                                    <input type="checkbox" name="var_id[]" autocomplete="off" value="Zucchini"> Zucchini
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div style="padding-top: 22px;">
-        @Html.ActionLink("Back to List", "Index")
-        <span>
-            <button type="submit" class="btn btn-default btn-lg" value="Create" style="float: right;">Submit</button>
-        </span>
-    </div>
+        <div style="padding-top: 22px;">
+            @Html.ActionLink("Back to List", "Index")
+            <span>
+                <button class="btn btn-default btn-lg" id="saveIngredients" value="Create" style="float: right;">Submit</button>
+            </span>
+        </div>
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-        <script src="~/Scripts/scripts.js"></script>
-    }
-</body>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+            <script src="~/Scripts/scripts.js"></script>
+        }
+    </body>
 </html>
-}
 
-        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.IngredientName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.IngredientName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.IngredientName, "", new { @class = "text-danger" })
-        </div>
+
+@*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="form-group">
+    @Html.LabelFor(model => model.IngredientName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.IngredientName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.IngredientName, "", new { @class = "text-danger" })*@
+        @*@Html.TextAreaFor(model => model.IngredientName, "Fish")
     </div>
+</div>*@
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
-        </div>
+@*<div class="form-group">
+    @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
     </div>
+</div>*@
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>*@
+@*<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+</div>*@
 
 

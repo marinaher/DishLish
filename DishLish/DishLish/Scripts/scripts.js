@@ -6,7 +6,7 @@
     });
 
     // "ENTER" key press event
-    $("input").keypress(function () {
+    $("#searchButton").keypress(function () {
         if (event.which == 13 || event.keyCode == 13) {
             search();
         }
@@ -14,6 +14,7 @@
 
     var search = function () {
         var userInput = $('#searchField').val();
+        console.log(userInput);
         var yumId = "86f441c9";
         var yumKey = "cccd1f0197909d57a96869bd16487c92"
         $.ajax({
@@ -23,6 +24,7 @@
             success: function (data) {
                 q: $('#searchField').val("");
                 console.log(data);
+                displayOnPage(data, userInput);
             }
         });
     }
@@ -39,7 +41,7 @@
     }
 
     var createIngredientList = function (data) {
-        var dataItems = data.results;
+        var dataItems = data.matches;
         var ingredientInfo = '';
 
         for (var i = 0; i < dataItems.length; i++) {
@@ -48,43 +50,51 @@
                 source: 0,
                 recipeName: item.recipeName,
                 imageUrlsBySize: item.imageUrlsBySize,
-                course: item.course,
-                totalTimeInSeconds: do_conversion(item.totalTimeInSeconds),
+                totalTimeInSeconds: item.totalTimeInSeconds,
                 rating: item.rating
             };
 
+            console.log(recipeInfo.imageUrlsBySize[90]);
+
             dataItems[i] = recipeInfo;
             ingredientInfo += '<li class="listOfRecipeInfo col-sm-6 col-md-3 flex-item">';
-            ingredientInfo += '<h4 class="recipeName">' + item.recipeName + '</h4>';
-            ingredientInfo += '<img class="artWork" src=' + item.imageUrlsBySize + '/>';
-            ingredientInfo += '<p class="course">' + item.course + '</p>';
-            ingredientInfo += '<p class="time">' + item.totalTimeInSeconds + '</p>';
-            ingredientInfo += '<p class="rating">' + item.rating + '</p>';
+            ingredientInfo += '<h4 class="recipeName">' + recipeInfo.recipeName + '</h4>';
+            ingredientInfo += '<img class="artWork" src=' + recipeInfo.imageUrlsBySize[90] + '>';
+            ingredientInfo += '<p class="time"> Cook time: (seconds)' + recipeInfo.totalTimeInSeconds + '</p>';
+            ingredientInfo += '<p class="rating"> Rating: ' + recipeInfo.rating + '</p>';
             ingredientInfo += '</li>';
         }
         return ingredientInfo;
     }
 
-    var do_conversion = function () {
-        $('#seconds').html('<div class="progress-bar progress-bar-info progress-bar-striped"><div class="bar" style="width: 100%;"></div></div>');
-
-        $.ajax({
-            type: 'POST',
-            url: '//www.tools4noobs.com/',
-            data:
-            {
-                action: 'ajax_seconds_hh_mm_ss',
-                seconds: $('#seconds').val()
-            },
-            success: function (data) {
-                $('#result').html(data);
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                $('#result').html("<div class=\"alert alert-error\"> Error " + xhr.status + ": " + thrownError + "</div>");
-            }
+    $("#saveIngredients").click(function () {
+        var selected = [];
+        var ingredients = $("[type=checkbox]");
+        var ingredientsLength = ingredients.length;
+        var url = "Index";
+        //console.log(ingredients);
+        var ingredientsSelected = $(".form-group input:checked");
+        $(ingredientsSelected).each(function () {
+            
+            var x = $(this).closest("div").attr('id');
+            var y = $(this).attr('value');
+            var z = {x, y }
+            selected.push(z);
+            console.log(z);
         });
-        return false;
-    }
+
+        //console.log(JSON.stringify(selected));
+        //$.post("IngredientsController/GetIngredients", JSON.stringify(selected));
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: JSON.stringify(selected),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            //error: function (response) {
+            //    alert("Error");
+            })
+        });
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 250) {

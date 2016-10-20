@@ -48,6 +48,13 @@ namespace DishLish.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Category")] Ingredient ingredient)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    db.Ingredients.Add(ingredient);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+
             if (ModelState.IsValid)
             {
                 db.Ingredients.Add(ingredient);
@@ -56,6 +63,23 @@ namespace DishLish.Controllers
             }
 
             return View(ingredient);
+        }
+
+        [HttpPost]
+        public ActionResult GetIngredients(List<List<string>> ingredient)
+        {
+            //foreach (var item in ingredient)
+            //{
+                //    Ingredient ingredient = new Ingredient();
+                //ingredient.IngredientName = item;
+                //if (ModelState.IsValid)
+                //{
+                //    db.Ingredients.Add(ingredient);
+                //    db.SaveChanges();
+                //}
+            //}
+
+            return Index();
         }
 
         // GET: Ingredients/Edit/5
