@@ -66,18 +66,18 @@ namespace DishLish.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetIngredients(List<List<string>> ingredient)
+        public ActionResult GetIngredients(List<string>ingredient)
         {
-            //foreach (var item in ingredient)
-            //{
-                //    Ingredient ingredient = new Ingredient();
-                //ingredient.IngredientName = item;
-                //if (ModelState.IsValid)
-                //{
-                //    db.Ingredients.Add(ingredient);
-                //    db.SaveChanges();
-                //}
-            //}
+            foreach (var item in ingredient)
+            {
+                Ingredient ingredients = new Ingredient();
+                ingredients.IngredientName = item;
+                if (ModelState.IsValid)
+                {
+                    db.Ingredients.Add(ingredients);
+                    db.SaveChanges();
+                }
+            }
 
             return Index();
         }

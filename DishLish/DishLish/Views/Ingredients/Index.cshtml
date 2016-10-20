@@ -3,56 +3,6 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<script>
-    $(document).ready(function () {
-
-        var searchForRecipe = function () {
-
-            
-
-            $.ajax({
-                type: "GET",
-                dataType: "json",
-                contentType: 'application/json; charset=utf-8',
-                url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3 ",
-                success: function (data) {
-                    //something here...
-                    //createIngredientsList();
-                    console.log(data);
-                }
-            });
-        }
-
-        var createIngredientsList = function () {
-            var dataItems = myData.results;
-            var ingredientItems = '';
-
-                if (typeof dataItems[startIndex] !== "undefined") {
-
-                    var item = dataItems[startIndex];
-                    var ingredientInfo = {
-                        title: item.title,
-                        image: title.image,
-                        likes: title.likes
-                    };
-
-                    dataItems[startIndex] = songInfo;
-                    ingredientItems += '<li class="createIngredientsList col-sm-6 col-md-3 flex-item">';
-                    ingredientItems += '<h3> class="foodTitle" src=' + item.title + '</h3>'
-                    ingredientItems += '<img class="foodImage" src=' + item.image + '/>';
-                    ingredientItems += '<p class="foodLikes"><small>' + item.likes + '</small></p>';
-                    ingredientItems += "</li>";
-                }
-                return ingredientItems;
-        }
-    });
-
-    $("#doSearch").click(function(){
-        searchForRecipe();
-    });
-</script>
-
 <h2>Index</h2>
 
 <p>

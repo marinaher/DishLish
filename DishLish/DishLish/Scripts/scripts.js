@@ -12,6 +12,7 @@
         }
     });
 
+    // Yummly API call
     var search = function () {
         var userInput = $('#searchField').val();
         console.log(userInput);
@@ -29,6 +30,7 @@
         });
     }
 
+    // Display on Page
     var displayOnPage = function (data, userInput) {
         var ingredientInfo = createIngredientList(data);
 
@@ -67,11 +69,12 @@
         return ingredientInfo;
     }
 
+    // Save Ingredients to Db
     $("#saveIngredients").click(function () {
         var selected = [];
         var ingredients = $("[type=checkbox]");
         var ingredientsLength = ingredients.length;
-        var url = "Index";
+        var url = "GetIngredients";
         //console.log(ingredients);
         var ingredientsSelected = $(".form-group input:checked");
         $(ingredientsSelected).each(function () {
@@ -96,6 +99,7 @@
             })
         });
 
+    // Scroll Functions
     $(window).scroll(function () {
         if ($(this).scrollTop() > 250) {
             $('.scrollToTop').fadeIn();
