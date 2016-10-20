@@ -39,7 +39,7 @@ namespace DishLish.Controllers
         // GET: CurrentInventories/Create
         public ActionResult Create()
         {
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name");
+            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Ingredient");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace DishLish.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name", currentInventory.IngredientId);
+            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Ingredient", currentInventory.IngredientId);
             return View(currentInventory);
         }
 
@@ -73,7 +73,7 @@ namespace DishLish.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name", currentInventory.IngredientId);
+            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Ingredient", currentInventory.IngredientId);
             return View(currentInventory);
         }
 
@@ -90,7 +90,7 @@ namespace DishLish.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name", currentInventory.IngredientId);
+            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Ingredient", currentInventory.IngredientId);
             return View(currentInventory);
         }
 
