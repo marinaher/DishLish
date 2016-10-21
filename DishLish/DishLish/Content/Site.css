@@ -24,7 +24,10 @@ textarea {
 #resultsLabel {
     display: none;
 }
-
+#inventoryEDU {
+    font-size: x-small;
+    font-weight: 100;
+}
 /* == Footer == */
 #footer {
     width: 100%;
