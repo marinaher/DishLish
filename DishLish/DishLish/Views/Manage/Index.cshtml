@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "Account";
 }
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
 <link href="~/Content/Site.css" rel="stylesheet" />
 
-<h2>My @ViewBag.Title</h2>
+<h2 id="helloUser">Hello @(ViewData["FullName"])!</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div class="">

@@ -14,7 +14,7 @@ namespace DishLish
             Cheese,
             CreamCheese,
             Milk,
-            Heavy Cream,
+            HeavyCream,
             Pudding,
             Yogurt,
             Apple,
