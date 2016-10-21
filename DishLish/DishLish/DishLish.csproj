@@ -224,6 +224,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IngredientsList.cs" />
     <Compile Include="Migrations\201610190128545_redo migrations.cs" />
     <Compile Include="Migrations\201610190128545_redo migrations.Designer.cs">
       <DependentUpon>201610190128545_redo migrations.cs</DependentUpon>
@@ -231,6 +232,10 @@
     <Compile Include="Migrations\201610191920363_addmigration1.cs" />
     <Compile Include="Migrations\201610191920363_addmigration1.Designer.cs">
       <DependentUpon>201610191920363_addmigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610202256012_Added display name for IngredientName.cs" />
+    <Compile Include="Migrations\201610202256012_Added display name for IngredientName.Designer.cs">
+      <DependentUpon>201610202256012_Added display name for IngredientName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -382,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610191920363_addmigration1.resx">
       <DependentUpon>201610191920363_addmigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610202256012_Added display name for IngredientName.resx">
+      <DependentUpon>201610202256012_Added display name for IngredientName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

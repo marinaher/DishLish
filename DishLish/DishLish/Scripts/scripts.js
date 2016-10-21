@@ -69,35 +69,37 @@
         return ingredientInfo;
     }
 
-    // Save Ingredients to Db
-    $("#saveIngredients").click(function () {
-        var selected = [];
-        var ingredients = $("[type=checkbox]");
-        var ingredientsLength = ingredients.length;
-        var url = "GetIngredients";
-        //console.log(ingredients);
-        var ingredientsSelected = $(".form-group input:checked");
-        $(ingredientsSelected).each(function () {
+
+
+    //// Save Ingredients to Db
+    //$("#saveIngredients").click(function () {
+    //    var selected = [];
+    //    var ingredients = $("[type=checkbox]");
+    //    var ingredientsLength = ingredients.length;
+    //    var url = "GetIngredients";
+    //    //console.log(ingredients);
+    //    var ingredientsSelected = $(".form-group input:checked");
+    //    $(ingredientsSelected).each(function () {
             
-            var x = $(this).closest("div").attr('id');
-            var y = $(this).attr('value');
-            var z = {x, y }
-            selected.push(z);
-            console.log(z);
-        });
+    //        var x = $(this).closest("div").attr('id');
+    //        var y = $(this).attr('value');
+    //        var z = {x, y }
+    //        selected.push(z);
+    //        console.log(z);
+    //    });
 
         //console.log(JSON.stringify(selected));
         //$.post("IngredientsController/GetIngredients", JSON.stringify(selected));
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: JSON.stringify(selected),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            //error: function (response) {
-            //    alert("Error");
-            })
-        });
+        //$.ajax({
+        //    type: "POST",
+        //    url: url,
+        //    data: JSON.stringify(selected),
+        //    contentType: "application/json; charset=utf-8",
+        //    dataType: "json",
+        //    //error: function (response) {
+        //    //    alert("Error");
+        //    })
+        //});
 
     // Scroll Functions
     $(window).scroll(function () {
@@ -115,7 +117,31 @@
 });
 
 
-
+function SaveIngredient() {
+    //$('.ingredientTable').each(function () {
+    var ingredientsArray = [];
+    var ingredientNamesArray = [];
+    var checkboxes = $('.ingredientTable tbody tr td .ing');
+    for (var i = 0; i < checkboxes.length; i++){
+        ingredientNamesArray.push(checkboxes[i].defaultValue);
+    }
+    var names = $('.ingredientTable tbody tr td .ing').val();
+    var isChecked = checkboxes.map((x) => {
+        return checkboxes[x].checked
+    })
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (isChecked[i]) {
+            ingredientsArray.push(ingredientNamesArray[i]);
+        }
+    }
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:17129/Ingredients/SaveIngredients",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(ingredientsArray)
+    });
+}
 
 
 

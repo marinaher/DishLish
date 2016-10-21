@@ -48,13 +48,6 @@ namespace DishLish.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Category")] Ingredient ingredient)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Ingredients.Add(ingredient);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-
             if (ModelState.IsValid)
             {
                 db.Ingredients.Add(ingredient);
@@ -65,22 +58,44 @@ namespace DishLish.Controllers
             return View(ingredient);
         }
 
-        [HttpPost]
-        public ActionResult GetIngredients(List<string>ingredient)
+        [Serializable]
+        public class MyIngredients
         {
-            foreach (var item in ingredient)
-            {
-                Ingredient ingredients = new Ingredient();
-                ingredients.IngredientName = item;
-                if (ModelState.IsValid)
-                {
-                    db.Ingredients.Add(ingredients);
-                    db.SaveChanges();
-                }
-            }
-
-            return Index();
+            // this allows us to read the JSon object
+            public string SingleIngredient { get; set; }
         }
+
+        public void SaveIngredients(string[] incomingArray)
+        {
+            for (int i = 0; i < incomingArray.Length; i++)
+            {
+                Ingredient ingredient = new Ingredient();
+                string[] categoryArray = new string[2];
+                categoryArray = incomingArray[i].Split(',');
+                ingredient.Category = categoryArray[1];
+                ingredient.IngredientName = categoryArray[0];
+                db.Ingredients.Add(ingredient);
+                db.SaveChanges();
+            }
+            RedirectToAction("Index", "CurrentInventories");
+        }
+
+        //[HttpPost]
+        //public ActionResult GetIngredients(List<string>ingredient)
+        //{
+        //    foreach (var item in ingredient)
+        //    {
+        //        Ingredient ingredients = new Ingredient();
+        //        ingredients.IngredientName = item;
+        //        if (ModelState.IsValid)
+        //        {
+        //            db.Ingredients.Add(ingredients);
+        //            db.SaveChanges();
+        //        }
+        //    }
+
+        //    return Index();
+        //}
 
         // GET: Ingredients/Edit/5
         public ActionResult Edit(int? id)
