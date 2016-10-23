@@ -13,18 +13,24 @@
         <div class="row">
             <div class="col-xs-12">
                 <h1>DishLish</h1>
-                <p>Find recipes based on ingredients that you currently have and search for recipes to create.</p>
                 @if (Request.IsAuthenticated)
                 {
+                    <p>Search for recipes based on key words <i>i.e: salmon, basil, pho, italian, etc.</i></p>
                     <div class="input-group">
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-secondary" id="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-secondary" id="searchButton"><i class="fa fa-search"></i></button>
                         </span>
                         <input type="text" class="form-control" id="searchField" placeholder="Search for...">
+                    </div>
+                       <br />
+                    <div>
+                        <p>Search based on current ingredients</p>
+                        <button type="button" id="whatsForDinner" class="btn btn-secondary" onclick="GetReceipesBasedOnIngredients()">What's for dinner?</button>
                     </div>
                 }
                 else
                 {
+                    <p>Find recipes based on ingredients that you currently have and search for recipes to create.</p>
                   <a class="btn btn-default btn-lg" href="/Account/Register"><i class="fa fa-pencil"></i> Register</a>
                 }
             </div>

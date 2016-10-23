@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using DishLish.Models;
 
@@ -77,8 +75,22 @@ namespace DishLish.Controllers
                 db.Ingredients.Add(ingredient);
                 db.SaveChanges();
             }
-            RedirectToAction("Index", "CurrentInventories");
+            RedirectToAction("Index");
         }
+
+        [Serializable]
+        public class GetRecipe
+        {
+            public string RecipeName { get; set; }
+        }
+        public void GetRecipeByIngredient()
+        {
+            Recipe recipe = new Recipe();
+
+            var ingredient = from i in db.Ingredients select i;
+            
+        }
+
 
         //[HttpPost]
         //public ActionResult GetIngredients(List<string>ingredient)

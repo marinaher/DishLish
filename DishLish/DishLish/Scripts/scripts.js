@@ -33,10 +33,11 @@
     // Display on Page
     var displayOnPage = function (data, userInput) {
         var ingredientInfo = createIngredientList(data);
+        var displayAmount = 10;
 
         $("#resultsLabel").fadeIn(200);
         $("#resultsCount").text("");
-        $("#resultsCount").text(data.resultCount + " results for \"" + userInput + "\".");
+        $("#resultsCount").text(displayAmount + " results for \"" + userInput + "\".");
         $('#searchResultsList').empty();
         $('#searchResultsList').fadeIn(200);
         $('#searchResultsList').html(ingredientInfo);
@@ -68,8 +69,6 @@
         }
         return ingredientInfo;
     }
-
-
 
     //// Save Ingredients to Db
     //$("#saveIngredients").click(function () {
@@ -116,9 +115,8 @@
     });
 });
 
-
+// Save Ingredients to Db
 function SaveIngredient() {
-    //$('.ingredientTable').each(function () {
     var ingredientsArray = [];
     var ingredientNamesArray = [];
     var checkboxes = $('.ingredientTable tbody tr td .ing');
@@ -143,9 +141,37 @@ function SaveIngredient() {
     });
 }
 
+// Get Recipes based on Ingredients
+function GetReceipesBasedOnIngredients() {
+    $('#whatsForDinner').click(function () {
+        alert("Need to find What's for dinner.");
+        });
+
+
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        url: "http://localhost:17129/Ingredients/GetRecipeByIngredient",
+        data: JSON.stringify(ingredientsArray)
+    });
+}
 
 
 
+//// All search results must include recipes with the specified ingredient(s)
+//function GetRecipesAllowIng() {
+//    var ingredients = [];
+//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion+soup + "&allowedIngredient[]=" + garlic + "&allowedIngredient[]=" + cognac
+
+//}
+
+////  Exclude recipes with the specified ingredient(s). 
+//function GetRecipesExcludeIng() {
+//    var ingredients = [];
+//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion + soup + "&excludedIngredient[]==" + garlic + "&excludedIngredient[]=" + cognac
+
+//}
 
     //$(".main").onepage_scroll({
     //    sectionContainer: "section",

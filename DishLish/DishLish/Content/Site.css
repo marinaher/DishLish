@@ -32,6 +32,33 @@ textarea {
 
 }
 
+/* == Search Results Main Page == */
+#searchResultsList {
+    list-style: none;
+}
+.listOfRecipeInfo {
+    display: inline-table;
+}
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex-item {
+    padding: 5px;
+    width: 249px;
+    height: 179px;
+    margin-top: 10px;
+}
+
 /* == Footer == */
 #footer {
     width: 100%;
@@ -61,21 +88,7 @@ footer ul li a {
     color: #000000;
     text-decoration: none;
     font-size: 25px;
-    /*-moz-transition: 0.2s ease-in-out;
-    -webkit-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;*/
 }
-/*footer ul li a:hover {
-    color: rgb(242, 65, 184);
-}*/
-/*footer a#go-top {
-    text-decoration: none;
-    color: rgb(123, 47, 169);
-    font-size: 45px;
-    float: right;
-    margin-right: -60px;
-    margin-top: 10px;
-}*/
 
 /* == Scrolling ==*/
 #backToTop {
