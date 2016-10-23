@@ -1,10 +1,38 @@
-﻿@model IEnumerable<DishLish.Models.Ingredient>
+﻿@model DishLish.Models.IndexViewModel
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div>
+    <p>Search based on current ingredients</p>
+    <button onclick="GetReceipesBasedOnIngredients(@Model.currentIngredients)" type="button" id="whatCanIMake" class="btn btn-secondary">What can I make?</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -41,5 +69,4 @@
         </td>
     </tr>
 }
-
-</table>
+</table>*@

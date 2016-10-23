@@ -17,6 +17,16 @@ namespace DishLish.Controllers
         // GET: Ingredients
         public ActionResult Index()
         {
+            List<Ingredient>currentIngredients = new List<Ingredient>();
+            foreach (var item in db.Ingredients)
+            {
+                currentIngredients.Add(item);
+            }
+
+            var model = new IndexViewModel
+            {
+                currentIngredients = currentIngredients
+            };
             return View(db.Ingredients.ToList());
         }
 
@@ -80,21 +90,6 @@ namespace DishLish.Controllers
             RedirectToAction("Index");
         }
 
-        public ActionResult GetRecipeByIngredient()
-        {
-            List<Ingredient> currentIngredients = new List<Ingredient>();
-            foreach (var item in db.Ingredients)
-            {
-                currentIngredients.Add(item);
-            }
-
-            var model = new IndexViewModel
-            {
-                currentIngredients = currentIngredients
-            };
-
-            return View(model);
-        }
         private IEnumerable<string> GetUnitsOfMeasurement()
         {
             return new List<string>
