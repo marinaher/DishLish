@@ -9,6 +9,9 @@ namespace DishLish.Models
 {
     public class IngredientViewModel
     {
+        [Key]
+        public int Id { get; set; }
+
         [Display(Name = "Ingredient Name")]
         public string IngredientName { get; set; }
 

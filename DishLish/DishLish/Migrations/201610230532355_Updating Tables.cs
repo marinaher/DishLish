@@ -3,7 +3,7 @@ namespace DishLish.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedIngredientViewModelandmadechangestoIngredientModel : DbMigration
+    public partial class UpdatingTables : DbMigration
     {
         public override void Up()
         {

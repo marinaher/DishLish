@@ -134,7 +134,7 @@ function SaveIngredient() {
     }
     $.ajax({
         type: "POST",
-        url: "http://localhost:17129/Ingredients/SaveIngredients",
+        url: "../Ingredients/SaveIngredients",
         dataType: "json",
         contentType: "application/json",
         data: JSON.stringify(ingredientsArray)
@@ -143,20 +143,26 @@ function SaveIngredient() {
 
 // Get Recipes based on Ingredients
 function GetReceipesBasedOnIngredients() {
-    $('#whatsForDinner').click(function () {
-        alert("Need to find What's for dinner.");
-        });
+    //alert("Need to find What's for dinner.");
+
 
 
     $.ajax({
         type: "GET",
         dataType: "json",
         contentType: "application/json",
-        url: "http://localhost:17129/Ingredients/GetRecipeByIngredient",
-        data: JSON.stringify(ingredientsArray)
+        url: "../Ingredients/GetRecipeByIngredient",
+        data: data,
+        success: function (data) {
+            gotStuffBack(data);
+        }
     });
-}
 
+    function gotStuffBack(data) {
+        console.log("===got some stuff back===");
+        console.log(data);
+    }
+}
 
 
 //// All search results must include recipes with the specified ingredient(s)
@@ -187,12 +193,4 @@ function GetReceipesBasedOnIngredients() {
     //    responsiveFallback: false,
 
     //    direction: "vertical"
-    //});
-
-    //$('#search').on('keyup', function () {
-    //    var pattern = $(this).val();
-    //    $('.searchable-container .items').hide();
-    //    $('.searchable-container .items').filter(function () {
-    //         return $(this).text().match(new RegExp(pattern, 'i'));
-    //     }).show();
     //});

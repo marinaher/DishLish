@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using DishLish.Models;
-using System.Collections.Generic;
 
 namespace DishLish.Controllers
 {
-    public class IngredientsController : ApplicationBaseController
+    public class IngredientsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -45,7 +46,7 @@ namespace DishLish.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Category,UnitOfMeasurement")] Ingredient ingredient)
+        public ActionResult Create([Bind(Include = "Id,IngredientName,Category,UnitOfMeasurement")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
             {
@@ -55,40 +56,6 @@ namespace DishLish.Controllers
             }
 
             return View(ingredient);
-        }
-        private IEnumerable<string> GetUnitsOfMeasurement()
-        {
-            return new List<string>
-            {
-                "c - Cups",
-                "doz - Dozen",
-                "fl oz - Fluid Ounce",
-                "gal - Gallon",
-                "g - Gram",
-                "l - Liter",
-                "ml - m]Millimeter",
-                "oz - Ounce",
-                "pinch",
-                "pt - Pint",
-                "lb - Pound",
-                "qt - Quart",
-                "tsp - Teaspoon",
-                "tbsp - Tablespoon"
-            };
-        }
-        private IEnumerable<SelectListItem>GetSelectListItems(IEnumerable<string> elements)
-        {
-            var selectList = new List<SelectListItem>();
-            foreach(var element in elements)
-            {
-                selectList.Add(new SelectListItem
-                {
-                    Value = element,
-                    Text = element
-                });
-            }
-
-            return selectList;
         }
 
         [Serializable]
@@ -113,17 +80,55 @@ namespace DishLish.Controllers
             RedirectToAction("Index");
         }
 
-        [Serializable]
-        public class GetRecipe
+        public ActionResult GetRecipeByIngredient()
         {
-            public string RecipeName { get; set; }
-        }
-        public void GetRecipeByIngredient()
-        {
-            Recipe recipe = new Recipe();
+            List<Ingredient> currentIngredients = new List<Ingredient>();
+            foreach (var item in db.Ingredients)
+            {
+                currentIngredients.Add(item);
+            }
 
-            var ingredient = from i in db.Ingredients select i;
-            
+            var model = new IndexViewModel
+            {
+                currentIngredients = currentIngredients
+            };
+
+            return View(model);
+        }
+        private IEnumerable<string> GetUnitsOfMeasurement()
+        {
+            return new List<string>
+            {
+                "c - Cups",
+                "doz - Dozen",
+                "fl oz - Fluid Ounce",
+                "gal - Gallon",
+                "g - Gram",
+                "l - Liter",
+                "ml - m]Millimeter",
+                "oz - Ounce",
+                "pinch",
+                "pt - Pint",
+                "lb - Pound",
+                "qt - Quart",
+                "tsp - Teaspoon",
+                "tbsp - Tablespoon"
+            };
+        }
+
+        private IEnumerable<SelectListItem> GetSelectListItems(IEnumerable<string> elements)
+        {
+            var selectList = new List<SelectListItem>();
+            foreach (var element in elements)
+            {
+                selectList.Add(new SelectListItem
+                {
+                    Value = element,
+                    Text = element
+                });
+            }
+
+            return selectList;
         }
 
         //[HttpPost]
@@ -163,7 +168,7 @@ namespace DishLish.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Category,UnitOfMeasurement")] Ingredient ingredient)
+        public ActionResult Edit([Bind(Include = "Id,IngredientName,Category,UnitOfMeasurement")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
             {

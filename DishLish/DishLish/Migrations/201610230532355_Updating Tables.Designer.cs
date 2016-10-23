@@ -7,13 +7,13 @@ namespace DishLish.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedIngredientViewModelandmadechangestoIngredientModel : IMigrationMetadata
+    public sealed partial class UpdatingTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedIngredientViewModelandmadechangestoIngredientModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatingTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610230518031_Added IngredientViewModel and made changes to Ingredient Model"; }
+            get { return "201610230532355_Updating Tables"; }
         }
         
         string IMigrationMetadata.Source

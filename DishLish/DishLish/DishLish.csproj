@@ -225,9 +225,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IngredientsList.cs" />
-    <Compile Include="Migrations\201610230518031_Added IngredientViewModel and made changes to Ingredient Model.cs" />
-    <Compile Include="Migrations\201610230518031_Added IngredientViewModel and made changes to Ingredient Model.Designer.cs">
-      <DependentUpon>201610230518031_Added IngredientViewModel and made changes to Ingredient Model.cs</DependentUpon>
+    <Compile Include="Migrations\201610230532355_Updating Tables.cs" />
+    <Compile Include="Migrations\201610230532355_Updating Tables.Designer.cs">
+      <DependentUpon>201610230532355_Updating Tables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -343,11 +343,6 @@
     <Content Include="Views\GroceryLists\Details.cshtml" />
     <Content Include="Views\GroceryLists\Edit.cshtml" />
     <Content Include="Views\GroceryLists\Index.cshtml" />
-    <Content Include="Views\Ingredients\Create.cshtml" />
-    <Content Include="Views\Ingredients\Delete.cshtml" />
-    <Content Include="Views\Ingredients\Details.cshtml" />
-    <Content Include="Views\Ingredients\Edit.cshtml" />
-    <Content Include="Views\Ingredients\Index.cshtml" />
     <Content Include="Views\PantryOwners\Create.cshtml" />
     <Content Include="Views\PantryOwners\Delete.cshtml" />
     <Content Include="Views\PantryOwners\Details.cshtml" />
@@ -363,6 +358,11 @@
     <Content Include="Views\Maps\Details.cshtml" />
     <Content Include="Views\Maps\Edit.cshtml" />
     <Content Include="Views\Maps\Index.cshtml" />
+    <Content Include="Views\Ingredients\Create.cshtml" />
+    <Content Include="Views\Ingredients\Delete.cshtml" />
+    <Content Include="Views\Ingredients\Details.cshtml" />
+    <Content Include="Views\Ingredients\Edit.cshtml" />
+    <Content Include="Views\Ingredients\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -377,8 +377,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610230518031_Added IngredientViewModel and made changes to Ingredient Model.resx">
-      <DependentUpon>201610230518031_Added IngredientViewModel and made changes to Ingredient Model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610230532355_Updating Tables.resx">
+      <DependentUpon>201610230532355_Updating Tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
