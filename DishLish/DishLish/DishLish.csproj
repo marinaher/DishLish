@@ -225,17 +225,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IngredientsList.cs" />
-    <Compile Include="Migrations\201610190128545_redo migrations.cs" />
-    <Compile Include="Migrations\201610190128545_redo migrations.Designer.cs">
-      <DependentUpon>201610190128545_redo migrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610191920363_addmigration1.cs" />
-    <Compile Include="Migrations\201610191920363_addmigration1.Designer.cs">
-      <DependentUpon>201610191920363_addmigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202256012_Added display name for IngredientName.cs" />
-    <Compile Include="Migrations\201610202256012_Added display name for IngredientName.Designer.cs">
-      <DependentUpon>201610202256012_Added display name for IngredientName.cs</DependentUpon>
+    <Compile Include="Migrations\201610230518031_Added IngredientViewModel and made changes to Ingredient Model.cs" />
+    <Compile Include="Migrations\201610230518031_Added IngredientViewModel and made changes to Ingredient Model.Designer.cs">
+      <DependentUpon>201610230518031_Added IngredientViewModel and made changes to Ingredient Model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -245,6 +237,7 @@
     <Compile Include="Models\GroceryList.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\IngredientViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Map.cs" />
     <Compile Include="Models\PantryOwner.cs" />
@@ -384,14 +377,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610190128545_redo migrations.resx">
-      <DependentUpon>201610190128545_redo migrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610191920363_addmigration1.resx">
-      <DependentUpon>201610191920363_addmigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202256012_Added display name for IngredientName.resx">
-      <DependentUpon>201610202256012_Added display name for IngredientName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610230518031_Added IngredientViewModel and made changes to Ingredient Model.resx">
+      <DependentUpon>201610230518031_Added IngredientViewModel and made changes to Ingredient Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

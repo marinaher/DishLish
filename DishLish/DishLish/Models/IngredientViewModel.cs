@@ -7,16 +7,14 @@ using System.Web.Mvc;
 
 namespace DishLish.Models
 {
-    public class Ingredient
+    public class IngredientViewModel
     {
-        [Key]
-        public int Id { get; set; }
-
         [Display(Name = "Ingredient Name")]
         public string IngredientName { get; set; }
 
         public string Category { get; set; }
 
+        [Display(Name = "Units of Measurement")]
         public string UnitOfMeasurement { get; set; }
         public IEnumerable<SelectListItem> UnitsOfMeasurement { get; set; }
     }
