@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201610230532355_Updating Tables.Designer.cs">
       <DependentUpon>201610230532355_Updating Tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610232050418_updates.cs" />
+    <Compile Include="Migrations\201610232050418_updates.Designer.cs">
+      <DependentUpon>201610232050418_updates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -379,6 +383,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610230532355_Updating Tables.resx">
       <DependentUpon>201610230532355_Updating Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610232050418_updates.resx">
+      <DependentUpon>201610232050418_updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

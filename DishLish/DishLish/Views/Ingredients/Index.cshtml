@@ -1,13 +1,45 @@
 ﻿@model DishLish.Models.IndexViewModel
-
 @{
     ViewBag.Title = "Index";
 }
+<head>
+    <meta charset="utf-8"/>
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <link href="~/Content/master.css" rel="stylesheet" />
+</head>
 
-<div>
-    <p>Search based on current ingredients</p>
-    <button onclick="GetReceipesBasedOnIngredients(@Model.currentIngredients)" type="button" id="whatCanIMake" class="btn btn-secondary">What can I make?</button>
-</div>
+<body>
+    <h2>Ingredients Index</h2>
+    <div>
+        <button onclick="GetReceipesBasedOnIngredients(@Model.currentIngredients)" type="button" id="whatCanIMake" class="btn btn-secondary">Search for recipes based on my current ingredients.</button>
+    </div>
+
+    @*@foreach (var item in Model.currentIngredients)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IngredientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitOfMeasurement)
+                </td>
+            </tr>
+        }*@
+
+    <script src="~/Scripts/scripts.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
 
 
 

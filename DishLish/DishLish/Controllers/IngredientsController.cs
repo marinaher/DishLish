@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DishLish.Models;
+using System.Web.Script.Serialization;
 
 namespace DishLish.Controllers
 {
@@ -27,7 +28,7 @@ namespace DishLish.Controllers
             {
                 currentIngredients = currentIngredients
             };
-            return View(db.Ingredients.ToList());
+            return View(model);
         }
 
         // GET: Ingredients/Details/5
