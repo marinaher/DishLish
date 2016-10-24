@@ -11,7 +11,7 @@ using System.Web.Script.Serialization;
 
 namespace DishLish.Controllers
 {
-    public class IngredientsController : Controller
+    public class IngredientsController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
