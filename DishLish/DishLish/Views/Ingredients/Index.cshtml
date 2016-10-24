@@ -9,9 +9,10 @@
 </head>
 
 <body>
+
     <h2>Ingredients Index</h2>
     <div>
-        <button onclick="GetReceipesBasedOnIngredients(@Model.currentIngredients)" type="button" id="whatCanIMake" class="btn btn-secondary">Search for recipes based on my current ingredients.</button>
+        <button onclick="GetReceipesBasedOnIngredients('@Model.ingredients')" type="button" id="whatCanIMake" class="btn btn-secondary">Search for recipes based on my current ingredients.</button>
     </div>
 
     @*@foreach (var item in Model.currentIngredients)

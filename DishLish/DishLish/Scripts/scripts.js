@@ -147,21 +147,19 @@ function Ingredient(category, name, id) {
     this.name = name;
     this.id = id;
 }
-function GetReceipesBasedOnIngredients(ingredientsList) {
-    var ingredientsString = "";
+function GetReceipesBasedOnIngredients(ingredientsString) {
+
     var URL = "http://api.yummly.com/v1/api/recipes?_app_id=86f441c9&_app_key=cccd1f0197909d57a96869bd16487c92&q="
-    for (var item in ingredientsList) {
-        ingredientsString += item.name + "+";
-    }
+
     URL = URL + ingredientsString;
     $.ajax({
         type: "GET",
         dataType: "json",
         contentType: "application/json",
         url: URL,
-        data: data,
         success: function (data) {
             alert(data);
+            console.log(data);
         }
     });
 }

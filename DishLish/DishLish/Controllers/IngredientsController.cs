@@ -18,16 +18,25 @@ namespace DishLish.Controllers
         // GET: Ingredients
         public ActionResult Index()
         {
-            List<Ingredient>currentIngredients = new List<Ingredient>();
+            string myIngredients = "";
+
+            List<Ingredient> currentIngredients = new List<Ingredient>();
             foreach (var item in db.Ingredients)
             {
                 currentIngredients.Add(item);
             }
 
+            foreach (var item in db.Ingredients)
+            {
+                myIngredients += item.IngredientName + "+";
+            }
+
             var model = new IndexViewModel
             {
-                currentIngredients = currentIngredients
+                currentIngredients = currentIngredients,
+                ingredients = myIngredients
             };
+
             return View(model);
         }
 
