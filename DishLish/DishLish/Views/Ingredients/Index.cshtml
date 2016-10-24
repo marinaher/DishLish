@@ -12,10 +12,12 @@
 
     <h2>Ingredients Index</h2>
     <p>List of available ingredients.</p>
+    <p>Click on the checkboxes to select ingredients to make recipes.</p>
     <p>@Html.ActionLink("Create New", "Create")</p>
     <br />
     <table class="table">
         <tr>
+            <th><i class="fa fa-check"></i></th>
             <th>Ingredient Name</th>
             <th>Category</th>
             <th>UnitOfMeasurement</th>
@@ -24,6 +26,9 @@
         @foreach (var item in Model.currentIngredients)
         {
             <tr>
+                <td>
+                    <input type="checkbox" name="selectIngredient" value="selectedIngredient" />
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IngredientName)
                 </td>

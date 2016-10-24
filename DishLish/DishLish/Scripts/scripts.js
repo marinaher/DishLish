@@ -79,7 +79,6 @@
     //    //console.log(ingredients);
     //    var ingredientsSelected = $(".form-group input:checked");
     //    $(ingredientsSelected).each(function () {
-            
     //        var x = $(this).closest("div").attr('id');
     //        var y = $(this).attr('value');
     //        var z = {x, y }
@@ -152,7 +151,7 @@ function GetReceipesBasedOnIngredients(ingredientsString) {
     var URL = "http://api.yummly.com/v1/api/recipes?_app_id=86f441c9&_app_key=cccd1f0197909d57a96869bd16487c92&q="
 
     URL = URL + ingredientsString;
-    console.log(ingredientsString);
+    //console.log(ingredientsString);
     $.ajax({
         type: "GET",
         dataType: "json",

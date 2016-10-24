@@ -40,6 +40,12 @@ namespace DishLish.Controllers
             return View(model);
         }
 
+        //// Select Ingredient
+        //public ActionResult SelectIngredient()
+        //{
+                
+        //}
+
         // GET: Ingredients/Details/5
         public ActionResult Details(int? id)
         {
