@@ -8,12 +8,13 @@
         <ul class="nav navbar-nav navbar-right nav-pills">
             <li role="presentation" class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    Hello @(ViewData["FullName"])!<span class="caret"></span>
+                    Hello @(ViewData["FullName"]) !<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>@Html.ActionLink("Manage Account", "Index", "Manage")</li>
                     <li>@Html.ActionLink("Current Inventory", "Index", "Ingredients")</li>
                     <li>@Html.ActionLink("Add Ingredients to Inventory", "Create", "Ingredients")</li>
+                    <li>@Html.ActionLink("Grocery List", "Index", "GroceryLists")</li>
                     <li>@Html.ActionLink("Where to Shop?", "Index", "Maps")</li>
                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                 </ul>
