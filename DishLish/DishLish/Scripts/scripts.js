@@ -20,7 +20,7 @@
         var yumKey = "cccd1f0197909d57a96869bd16487c92"
         $.ajax({
             type: "GET",
-            dataType: "json",
+            dataType: "jsonp",
             url: "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + userInput,
             success: function (data) {
                 q: $('#searchField').val("");
@@ -69,6 +69,11 @@
         }
         return ingredientInfo;
     }
+
+    // WhatCanIMake onClick Redirect to Index
+    $('#saveIngredients').click(function () {
+        window.location.href="Index"
+    });
 
     //// Save Ingredients to Db
     //$("#saveIngredients").click(function () {
@@ -134,7 +139,7 @@ function SaveIngredient() {
     $.ajax({
         type: "POST",
         url: "../Ingredients/SaveIngredients",
-        dataType: "json",
+        dataType: "jsonp",
         contentType: "application/json",
         data: JSON.stringify(ingredientsArray)
     });
@@ -151,11 +156,10 @@ function GetReceipesBasedOnIngredients(ingredientsString) {
     var URL = "http://api.yummly.com/v1/api/recipes?_app_id=86f441c9&_app_key=cccd1f0197909d57a96869bd16487c92&q="
 
     URL = URL + ingredientsString;
-    //console.log(ingredientsString);
     $.ajax({
         type: "GET",
         dataType: "json",
-        contentType: "application/json",
+        contentType: "application/jsonp",
         url: URL,
         success: function (data) {
             console.log(data);
@@ -163,50 +167,17 @@ function GetReceipesBasedOnIngredients(ingredientsString) {
     });
 }
 
-//    $.ajax({
-//        type: "GET",
-//        dataType: "json",
-//        contentType: "application/json",
-//        url: "../Ingredients/GetRecipeByIngredient",
-//        data: data,
-//        success: function (data) {
-//            gotStuffBack(data);
-//        }
-//    });
-
-//    function gotStuffBack(data) {
-//        console.log("===got some stuff back===");
-//        console.log(data);
-//    }
-//}
-
-
 //// All search results must include recipes with the specified ingredient(s)
 //function GetRecipesAllowIng() {
 //    var ingredients = [];
-//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion+soup + "&allowedIngredient[]=" + garlic + "&allowedIngredient[]=" + cognac
+//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion+soup + "&allowedIngredient[]=" + "" + "&allowedIngredient[]=" + ""
 
 //}
 
 ////  Exclude recipes with the specified ingredient(s). 
 //function GetRecipesExcludeIng() {
+//    var excludeIngredient = "";
 //    var ingredients = [];
-//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion + soup + "&excludedIngredient[]==" + garlic + "&excludedIngredient[]=" + cognac
+//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion + soup + "&excludedIngredient[]==" + "" + "&excludedIngredient[]=" + ""
 
 //}
-
-    //$(".main").onepage_scroll({
-    //    sectionContainer: "section",
-    //    easing: "ease",
-
-    //    animationTime: 1000,
-    //    pagination: true,
-    //    updateURL: false,
-    //    beforeMove: function (index) { },
-    //    afterMove: function (index) { },
-    //    loop: false,
-    //    keyword: true,
-    //    responsiveFallback: false,
-
-    //    direction: "vertical"
-    //});
