@@ -233,6 +233,14 @@
     <Compile Include="Migrations\201610232050418_updates.Designer.cs">
       <DependentUpon>201610232050418_updates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610241942429_Removed Ingredient FK from GroceryList.cs" />
+    <Compile Include="Migrations\201610241942429_Removed Ingredient FK from GroceryList.Designer.cs">
+      <DependentUpon>201610241942429_Removed Ingredient FK from GroceryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610241950475_Updated Grocery List File.cs" />
+    <Compile Include="Migrations\201610241950475_Updated Grocery List File.Designer.cs">
+      <DependentUpon>201610241950475_Updated Grocery List File.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -257,6 +265,8 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\master.css" />
     <Content Include="Content\onepage-scroll.css" />
+    <Content Include="Images\smileFood.png" />
+    <Content Include="Scripts\groceries.js" />
     <Content Include="Scripts\scripts.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -342,11 +352,6 @@
     <Content Include="Views\FavoriteRecipes\Details.cshtml" />
     <Content Include="Views\FavoriteRecipes\Edit.cshtml" />
     <Content Include="Views\FavoriteRecipes\Index.cshtml" />
-    <Content Include="Views\GroceryLists\Create.cshtml" />
-    <Content Include="Views\GroceryLists\Delete.cshtml" />
-    <Content Include="Views\GroceryLists\Details.cshtml" />
-    <Content Include="Views\GroceryLists\Edit.cshtml" />
-    <Content Include="Views\GroceryLists\Index.cshtml" />
     <Content Include="Views\PantryOwners\Create.cshtml" />
     <Content Include="Views\PantryOwners\Delete.cshtml" />
     <Content Include="Views\PantryOwners\Details.cshtml" />
@@ -367,6 +372,11 @@
     <Content Include="Views\Ingredients\Details.cshtml" />
     <Content Include="Views\Ingredients\Edit.cshtml" />
     <Content Include="Views\Ingredients\Index.cshtml" />
+    <Content Include="Views\GroceryLists\Create.cshtml" />
+    <Content Include="Views\GroceryLists\Delete.cshtml" />
+    <Content Include="Views\GroceryLists\Details.cshtml" />
+    <Content Include="Views\GroceryLists\Edit.cshtml" />
+    <Content Include="Views\GroceryLists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -386,6 +396,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610232050418_updates.resx">
       <DependentUpon>201610232050418_updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610241942429_Removed Ingredient FK from GroceryList.resx">
+      <DependentUpon>201610241942429_Removed Ingredient FK from GroceryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610241950475_Updated Grocery List File.resx">
+      <DependentUpon>201610241950475_Updated Grocery List File.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

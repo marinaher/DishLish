@@ -13,10 +13,10 @@ namespace DishLish.Models
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("Ingredient")]
-        public int IngredientId { get; set; }
-        public Ingredient Ingredient { get; set; }
+        [Display(Name = "Ingredient")]
+        public string NameOfIngredient { get; set; }
         
-        public int BuyAmount { get; set; }
+        [Display(Name = "Amount to buy")]
+        public int? BuyAmount { get; set; }
     }
 }

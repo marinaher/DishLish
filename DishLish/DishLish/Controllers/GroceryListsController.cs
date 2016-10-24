@@ -17,8 +17,7 @@ namespace DishLish.Controllers
         // GET: GroceryLists
         public ActionResult Index()
         {
-            var groceryLists = db.GroceryLists.Include(g => g.Ingredient);
-            return View(groceryLists.ToList());
+            return View(db.GroceryLists.ToList());
         }
 
         // GET: GroceryLists/Details/5
@@ -39,7 +38,6 @@ namespace DishLish.Controllers
         // GET: GroceryLists/Create
         public ActionResult Create()
         {
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace DishLish.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IngredientId,BuyAmount")] GroceryList groceryList)
+        public ActionResult Create([Bind(Include = "Id,NameOfIngredient,BuyAmount")] GroceryList groceryList)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace DishLish.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name", groceryList.IngredientId);
             return View(groceryList);
         }
 
@@ -73,7 +70,6 @@ namespace DishLish.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name", groceryList.IngredientId);
             return View(groceryList);
         }
 
@@ -82,7 +78,7 @@ namespace DishLish.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IngredientId,BuyAmount")] GroceryList groceryList)
+        public ActionResult Edit([Bind(Include = "Id,NameOfIngredient,BuyAmount")] GroceryList groceryList)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace DishLish.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IngredientId = new SelectList(db.Ingredients, "Id", "Name", groceryList.IngredientId);
             return View(groceryList);
         }
 
