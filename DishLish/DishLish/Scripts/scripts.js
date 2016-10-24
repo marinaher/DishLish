@@ -167,6 +167,12 @@ function GetReceipesBasedOnIngredients(ingredientsString) {
     });
 }
 
+// Put into view to Hide Header and Footer
+//$(function () {
+//    $("header, footer").hide();
+//});
+
+
 //// All search results must include recipes with the specified ingredient(s)
 //function GetRecipesAllowIng() {
 //    var ingredients = [];
