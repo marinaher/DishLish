@@ -8,11 +8,18 @@
     <meta charset="utf-8"/>
     <title>DishLish Home Page</title>
     <link href="~/Content/master.css" rel="stylesheet" />
+    <style>
+        .image {
+            background-image: url("../../Images/pepper.jpg");
+            height: 500px;
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
+<body class="image">
     <div class="container" style="align-content: center">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12" id="homeContainer">
                 <h1>DishLish</h1>
                 @if (Request.IsAuthenticated)
                 {

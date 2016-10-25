@@ -270,6 +270,7 @@
     <Content Include="Content\Map.css" />
     <Content Include="Content\master.css" />
     <Content Include="Content\onepage-scroll.css" />
+    <Content Include="Images\pepper.jpg" />
     <Content Include="Images\smileFood.png" />
     <Content Include="Scripts\groceries.js" />
     <Content Include="Scripts\Maps.js" />
