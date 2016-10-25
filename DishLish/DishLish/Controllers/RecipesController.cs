@@ -58,6 +58,27 @@ namespace DishLish.Controllers
             return View(recipe);
         }
 
+        [Serializable]
+        public class MyRecipes
+        {
+            // this allows us to read the JSon object
+            public string SingleRecipe { get; set; }
+        }
+
+        public void SaveRecipes(string[] incomingRecipeArray)
+        {
+            for (int i = 0; i < incomingRecipeArray.Length; i++)
+            {
+                Recipe recipe = new Recipe();
+                string[] RecipeArray = new string[2];
+                recipe.RecipeTitle = RecipeArray[0];
+                recipe.Description = RecipeArray[1];
+                db.Recipes.Add(recipe);
+                db.SaveChanges();
+            }
+            RedirectToAction("Index");
+        }
+
         // GET: Recipes/Edit/5
         public ActionResult Edit(int? id)
         {

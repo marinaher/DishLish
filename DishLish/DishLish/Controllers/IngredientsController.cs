@@ -72,7 +72,7 @@ namespace DishLish.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IngredientName,Category,UnitOfMeasurement")] Ingredient ingredient)
+        public ActionResult Create([Bind(Include = "Id,IngredientName,Category")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
             {
@@ -105,6 +105,8 @@ namespace DishLish.Controllers
             }
             RedirectToAction("Index");
         }
+
+        
 
         private IEnumerable<string> GetUnitsOfMeasurement()
         {
@@ -179,7 +181,7 @@ namespace DishLish.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IngredientName,Category,UnitOfMeasurement")] Ingredient ingredient)
+        public ActionResult Edit([Bind(Include = "Id,IngredientName,Category")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
             {

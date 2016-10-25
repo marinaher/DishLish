@@ -241,6 +241,10 @@
     <Compile Include="Migrations\201610241950475_Updated Grocery List File.Designer.cs">
       <DependentUpon>201610241950475_Updated Grocery List File.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610250407442_Edits to Models and Controllers.cs" />
+    <Compile Include="Migrations\201610250407442_Edits to Models and Controllers.Designer.cs">
+      <DependentUpon>201610250407442_Edits to Models and Controllers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -402,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610241950475_Updated Grocery List File.resx">
       <DependentUpon>201610241950475_Updated Grocery List File.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610250407442_Edits to Models and Controllers.resx">
+      <DependentUpon>201610250407442_Edits to Models and Controllers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

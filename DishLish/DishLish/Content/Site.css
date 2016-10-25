@@ -71,6 +71,60 @@ textarea {
     vertical-align: middle;
 }
 
+.del {
+    text-decoration: line-through;
+}
+
+#dropDown {
+    margin-bottom: 3%;
+    font-size: 20px;
+    color: black;
+}
+
+#add {
+    margin-left: 2%;
+    color: black;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    margin-right: 1%;
+}
+
+#input {
+    color: black;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding-right: 10%;
+    font-size: 20px;
+}
+
+#remove {
+    color: black;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    margin-left: 1%
+}
+
+.checked {
+    float: right;
+    color: black;
+    font-size: 15px;
+}
+
+.liEl {
+    ;
+    width: 250px;
+    padding: 2%;
+    margin-left: 8%;
+    border-radius: 5%;
+    font-family: sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+ul {
+    margin-top: 4%;
+}
+
+
 /* == Footer == */
 #footer {
     width: 100%;

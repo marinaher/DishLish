@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h2>Ingredients Index</h2>
+    <h2>My Current Ingredients</h2>
     <p>List of available ingredients.</p>
     <p>Click on the checkboxes to select ingredients to make recipes.</p>
     <p>@Html.ActionLink("Create New", "Create")</p>
@@ -19,7 +19,7 @@
             <th><i class="fa fa-check"></i></th>
             <th>Ingredient Name</th>
             <th>Category</th>
-            <th>UnitOfMeasurement</th>
+            @*<th>UnitOfMeasurement</th>*@
             <th></th>
         </tr>
         @foreach (var item in Model.currentIngredients)
@@ -34,9 +34,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.UnitOfMeasurement)
-                </td>
+                </td>*@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
@@ -50,6 +50,7 @@
         <button onclick="GetReceipesBasedOnIngredients('@Model.ingredients')" type="button" id="whatCanIMake" class="btn btn-secondary">Search for recipes based on my current ingredients.</button>
     </div>
     <ul id="searchRecipesList" class="row flex-container"></ul>
+
     <script src="~/Scripts/scripts.js"></script>
 </body>
 

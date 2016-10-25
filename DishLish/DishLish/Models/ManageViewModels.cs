@@ -14,6 +14,7 @@ namespace DishLish.Models
         public bool BrowserRemembered { get; set; }
         public List<Ingredient> currentIngredients { get; set; }
         public string ingredients { get; set; }
+        public string recipes { get; set; }
 
     }
 

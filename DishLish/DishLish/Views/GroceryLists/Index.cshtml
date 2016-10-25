@@ -21,7 +21,7 @@
                 <p>Simple. Like, eating a tub of ice cream!</p>
             </div>
             <hr />
-            <div>
+            @*<div>
                 <select name="Category" id="dropDown" class="dropdown btn">
                     <option value="dairyCategory">Dairy</option>
                     <option value="fruitCategory">Fruit</option>
@@ -30,47 +30,45 @@
                     <option value="vegetableCategory">Vegetable</option>
                     <option value="otherCategory">Other</option>
                 </select>
-            </div>
-            <div id="form">
+            </div>*@
+            @*<div id="form">
                 <input type="text" id="input" class="btn" placeholder="Enter in item..." onsubmit="emptyText();" />
                 <button id="add" class="btn">Add</button>
                 <button id="remove" class="btn" onclick="return emptyText();">Remove Last</button>
                 <br />
                 <ul id="list"></ul>
-            </div>
+            </div>*@
         </div>
     </div>
+    <p>
+        @Html.ActionLink("Add to grocery list", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfIngredient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuyAmount)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfIngredient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuyAmount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+</table>
     <script src="~/Scripts/groceries.js"></script>
 </body>
-
-<p>
-    @Html.ActionLink("Add to grocery list", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfIngredient)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BuyAmount)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameOfIngredient)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BuyAmount)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>

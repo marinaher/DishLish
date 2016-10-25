@@ -17,8 +17,8 @@ namespace DishLish.Models
 
         public string Category { get; set; }
 
-        [Display(Name = "Units of Measurement")]
-        public string UnitOfMeasurement { get; set; }
-        public IEnumerable<SelectListItem> UnitsOfMeasurement { get; set; }
+        //[Display(Name = "Units of Measurement")]
+        //public string UnitOfMeasurement { get; set; }
+        //public IEnumerable<SelectListItem> UnitsOfMeasurement { get; set; }
     }
 }

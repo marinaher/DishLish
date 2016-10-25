@@ -234,7 +234,31 @@ function RenderRecipes(data) {
     }
 }
 
-
+// Save Recipe Url to Db
+function SaveRecipeUrl() {
+    var recipessArray = [];
+    var recipeNamesArray = [];
+    //var checkboxes = $('.ingredientTable tbody tr td .ing');
+    for (var i = 0; i < checkboxes.length; i++) {
+        recipeNamesArray.push(checkboxes[i].defaultValue);
+    }
+    var names = $('.ingredientTable tbody tr td .ing').val();
+    var isChecked = checkboxes.map((x) => {
+        return checkboxes[x].checked
+    })
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (isChecked[i]) {
+            recipessArray.push(recipeNamesArray[i]);
+        }
+    }
+    $.ajax({
+        type: "POST",
+        url: "../Ingredients/SaveIngredients",
+        dataType: "jsonp",
+        contentType: "application/json",
+        data: JSON.stringify(recipessArray)
+    });
+}
 
 // Put into view to Hide Header and Footer
 //$(function () {
