@@ -6,6 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArL5SAmuPeVtef1T__LfEaeTyMqJFpxNw&" type="text/javascript" onerror="mapLoadError()"></script>
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 
 <style>
     
@@ -17,22 +18,35 @@
 }
 #sidebar {
     display:table-cell;
-    width: 23%;
+    width: 18%;
     bottom:0;
     position:absolute;   
-      top:40px;
-    background: rgba(199, 199, 199, 0.7);
+    top:82px;
+    bottom: 26px;
+    background: rgba(8, 14, 10, 0.7);
     left: 30px;
 }
 #sidebar h2 {
+    color: white;
+    font-family: font-family: 'Fredoka One', cursive;
     padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#sidebar p {
+    font-family: font-family: 'Fredoka One', cursive;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .zipSearch {
     padding-top: 50px;
 }
 #zipSubmit {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: #9b457c;
+    padding-top: 3px;
+    padding-bottom: 2px;
 }
 #textZip {
     color: black;
@@ -58,7 +72,9 @@
     <div id="map-canvas"></div>
 </div>
 <div id="sidebar">
-    <h2>Find a grocery store or Farmer's Market near you!</h2>
+    <h2>Find a Farmer's Market near you!</h2>
+    <p>Shop locally to help out the famers.</p>
+    <p>Eat organically.</p>
     <center>
         <div class="float_none">
             <form method="get" id="searchZip">
