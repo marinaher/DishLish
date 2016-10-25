@@ -80,6 +80,35 @@
         //window.location.href = "Index"
     });
 
+    //// Save Ingredients to Db
+    //$("#saveIngredients").click(function () {
+    //    var selected = [];
+    //    var ingredients = $("[type=checkbox]");
+    //    var ingredientsLength = ingredients.length;
+    //    var url = "GetIngredients";
+    //    //console.log(ingredients);
+    //    var ingredientsSelected = $(".form-group input:checked");
+    //    $(ingredientsSelected).each(function () {
+    //        var x = $(this).closest("div").attr('id');
+    //        var y = $(this).attr('value');
+    //        var z = {x, y }
+    //        selected.push(z);
+    //        console.log(z);
+    //    });
+
+        //console.log(JSON.stringify(selected));
+        //$.post("IngredientsController/GetIngredients", JSON.stringify(selected));
+        //$.ajax({
+        //    type: "POST",
+        //    url: url,
+        //    data: JSON.stringify(selected),
+        //    contentType: "application/json; charset=utf-8",
+        //    dataType: "json",
+        //    //error: function (response) {
+        //    //    alert("Error");
+        //    })
+        //});
+
     // Scroll Functions
     $(window).scroll(function () {
         if ($(this).scrollTop() > 250) {
@@ -143,7 +172,9 @@ function GetReceipesBasedOnIngredients(ingredientsString) {
     });
 }
 
+
 function RenderRecipes(data) {
+    //console.log(data);
     var dataItems = data.matches;
 
     $('#searchRecipesList').empty();
@@ -179,17 +210,20 @@ function RenderRecipes(data) {
         }
     $("#searchRecipesList span").click(function () {
         var myClass = $(this).attr("class");
+        console.log(myClass);
         GetRecipeUrl(myClass);
     });
 
     function GetRecipeUrl(myClass) {
         var recipeUrl = "http://api.yummly.com/v1/api/recipe/" + myClass + "?_app_id=86f441c9&_app_key=cccd1f0197909d57a96869bd16487c92";
+        //console.log(recipeUrl);
         $.ajax({
             type: "GET",
             dataType: "json",
             contentType: "application/jsonp",
             url: recipeUrl,
             success: function (data) {
+                //console.log(data.source.sourceRecipeUrl);
                 FoundRecipeUrl(data);
             }
         });
@@ -199,6 +233,7 @@ function RenderRecipes(data) {
         window.open(UrlRecipeData);
     }
 }
+
 
 
 // Put into view to Hide Header and Footer
