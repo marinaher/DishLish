@@ -70,9 +70,14 @@
         return ingredientInfo;
     }
 
-    // WhatCanIMake onClick Redirect to Index
+    // Save Ingredients onClick Redirect to Index
     $('#saveIngredients').click(function () {
-        window.location.href="Index"
+        //window.location.href="Index"
+    });
+
+    // Save Ingredients onClick Redirect to Index
+    $('#whatCanIMake').click(function () {
+        //window.location.href = "Index"
     });
 
     //// Save Ingredients to Db
@@ -153,7 +158,7 @@ function Ingredient(category, name, id) {
 }
 function GetReceipesBasedOnIngredients(ingredientsString) {
 
-    var URL = "http://api.yummly.com/v1/api/recipes?_app_id=86f441c9&_app_key=cccd1f0197909d57a96869bd16487c92&q="
+    var URL = "http://api.yummly.com/v1/api/recipes?_app_id=86f441c9&_app_key=cccd1f0197909d57a96869bd16487c92&requirePictures=true&q="
 
     URL = URL + ingredientsString;
     $.ajax({
@@ -162,28 +167,72 @@ function GetReceipesBasedOnIngredients(ingredientsString) {
         contentType: "application/jsonp",
         url: URL,
         success: function (data) {
-            console.log(data);
+            RenderRecipes(data);
         }
     });
 }
+
+
+function RenderRecipes(data) {
+    //console.log(data);
+    var dataItems = data.matches;
+
+    $('#searchRecipesList').empty();
+    $('#searchRecipesList').fadeIn(200);
+    $('#searchRecipesList').html(DisplayRecipeInfo(dataItems));
+
+        function DisplayRecipeInfo(dataItems) {
+            var foundRecipe = '';
+
+            for (var i = 0; i < dataItems.length; i++) {
+                var item = dataItems[i];
+                console.log(item);
+                var foundRecipeInfo = {
+                    source: 0,
+                    recipeID: item.id,
+                    recipeName: item.recipeName,
+                    imageUrlsBySize: item.imageUrlsBySize,
+                    totalTimeInSeconds: item.totalTimeInSeconds,
+                    rating: item.rating
+                };
+
+                dataItems[i] = foundRecipeInfo;
+                foundRecipe += '<span class=' + foundRecipeInfo.recipeID + '>';
+                foundRecipe += '<li class="listOfRecipeInfo col-sm-6 col-md-3 flex-item">';
+                foundRecipe += '<h4 class="recipeName">' + foundRecipeInfo.recipeName + '</h4>';
+                foundRecipe += '<img class="artWork" src=' + foundRecipeInfo.imageUrlsBySize[90] + '>';
+                foundRecipe += '<p class="time"> Cook time: ' + foundRecipeInfo.totalTimeInSeconds + ' (seconds)</p>';
+                foundRecipe += '<p class="rating"> Rating: ' + foundRecipeInfo.rating + '</p>';
+                foundRecipe += '</li>';
+                foundRecipe += '</span>';
+            }
+            return foundRecipe;
+        }
+    $("#searchRecipesList span").click(function () {
+        var myClass = $(this).attr("class");
+        console.log(myClass);
+        GetRecipeUrl(myClass);
+    });
+
+    function GetRecipeUrl(myClass) {
+        var recipeUrl = "http://api.yummly.com/v1/api/recipe/" + myClass + "?_app_id=86f441c9&_app_key=cccd1f0197909d57a96869bd16487c92";
+        //console.log(recipeUrl);
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            contentType: "application/jsonp",
+            url: recipeUrl,
+            success: function (data) {
+                console.log(data.source.sourceRecipeUrl);
+
+            }
+        });
+    }
+}
+
+
 
 // Put into view to Hide Header and Footer
 //$(function () {
 //    $("header, footer").hide();
 //});
-
-
-//// All search results must include recipes with the specified ingredient(s)
-//function GetRecipesAllowIng() {
-//    var ingredients = [];
-//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion+soup + "&allowedIngredient[]=" + "" + "&allowedIngredient[]=" + ""
-
-//}
-
-////  Exclude recipes with the specified ingredient(s). 
-//function GetRecipesExcludeIng() {
-//    var excludeIngredient = "";
-//    var ingredients = [];
-//    var url = "http://api.yummly.com/v1/api/recipes?_app_id=" + yumId + "&_app_key=" + yumKey + "&q=" + onion + soup + "&excludedIngredient[]==" + "" + "&excludedIngredient[]=" + ""
-
-//}
