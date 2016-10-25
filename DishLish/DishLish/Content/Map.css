@@ -1,0 +1,55 @@
+﻿#map-canvas{
+   position: absolute;
+   top:0; left:0; bottom:0; right:0;
+   height: 100%; 
+   max-width: 100%;
+}
+#sidebar {
+    display:table-cell;
+    width: 18%;
+    bottom:0;
+    position:absolute;   
+    top:82px;
+    bottom: 26px;
+    background: rgba(8, 14, 10, 0.7);
+    left: 30px;
+}
+#sidebar h2 {
+    color: white;
+    font-family: font-family: 'Fredoka One', cursive;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#sidebar p {
+    font-family: font-family: 'Fredoka One', cursive;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.zipSearch {
+    padding-top: 50px;
+}
+#zipSubmit {
+    background-color: white;
+    color: #9b457c;
+    padding-top: 3px;
+    padding-bottom: 2px;
+}
+#textZip {
+    color: black;
+}
+#results {
+    height: 117px;
+    width: 300px;
+}
+#results h1 {
+    font-size: 25px;
+}
+#results h3{
+    font-size: 18px;
+}
+#results p {
+    font-size: 12px;
+    color: black;
+}

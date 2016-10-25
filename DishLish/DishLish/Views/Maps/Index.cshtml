@@ -7,66 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArL5SAmuPeVtef1T__LfEaeTyMqJFpxNw&" type="text/javascript" onerror="mapLoadError()"></script>
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-
-<style>
-    
-#map-canvas{
-   position: absolute;
-   top:0; left:0; bottom:0; right:0;
-   height: 100%; 
-   max-width: 100%;
-}
-#sidebar {
-    display:table-cell;
-    width: 18%;
-    bottom:0;
-    position:absolute;   
-    top:82px;
-    bottom: 26px;
-    background: rgba(8, 14, 10, 0.7);
-    left: 30px;
-}
-#sidebar h2 {
-    color: white;
-    font-family: font-family: 'Fredoka One', cursive;
-    padding-top: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-#sidebar p {
-    font-family: font-family: 'Fredoka One', cursive;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.zipSearch {
-    padding-top: 50px;
-}
-#zipSubmit {
-    background-color: white;
-    color: #9b457c;
-    padding-top: 3px;
-    padding-bottom: 2px;
-}
-#textZip {
-    color: black;
-}
-#results {
-    height: 117px;
-    width: 300px;
-}
-#results h1 {
-    font-size: 25px;
-}
-#results h3{
-    font-size: 18px;
-}
-#results p {
-    font-size: 12px;
-    color: black;
-}
-
-</style>
+<link href="~/Content/Map.css" rel="stylesheet" />
 
 <div class="marketmap">
     <div id="map-canvas"></div>
@@ -84,166 +25,17 @@
                 </div>
             </form>
         </div>
-        <div id="results"></div>
+        <div id="results" data-bind="visible: marketList().length === numResults, css: { hidden: false }">
+            <ul class="list-unstyled market-list" data-bind="foreach: filteredMarkets()"></ul>
+        </div>
     </center>
     <div id="map_canvas"></div>
 </div>
 
+<script src="~/Scripts/Maps.js"></script>
+<script>
+    $(function () {
+        $("header, footer").hide();
+    });
+</script>
 
-@section scripts {
-<section class="scripts">
-    <script>
-        $(document).ready(function () {
-            var self = this;
-            $('form').submit(function (event) {
-                event.preventDefault();
-                searchFarmersRequest();
-            });
-
-            function initMap() {
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    center: {
-                        lat: -34.397,
-                        lng: 150.644
-                    },
-                    zoom: 10
-                });
-                var infoWindow = new google.maps.InfoWindow({
-                    map: map
-                });
-                // Try HTML5 geolocation.
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function (position) {
-                        var pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-                        infoWindow.setPosition(pos);
-                        infoWindow.setContent('Location found.');
-                        map.setCenter(pos);
-                    }, function () {
-                        handleLocationError(true, infoWindow, map.getCenter());
-                    });
-                } else {
-                    // Browser doesn't support Geolocation
-                    handleLocationError(false, infoWindow, map.getCenter());
-                }
-            }
-
-            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
-            }
-            var mapOptions = {
-                zoom: 10,
-                center: {
-                    lat: 43.038902,
-                    lng: -87.906471
-                },
-                panControl: false,
-                panControlOptions: {
-                    position: google.maps.ControlPosition.BOTTOM_LEFT
-                },
-                zoomControl: true,
-                zoomControlOptions: {
-                    style: google.maps.ZoomControlStyle.LARGE,
-                    position: google.maps.ControlPosition.RIGHT_CENTER
-                },
-                scaleControl: false
-            };
-            infowindow = new google.maps.InfoWindow({
-                content: "holding..." //place holder 
-            });
-            //Fire up the Google maps and place inside the map-canvas div
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-
-            function searchFarmersRequest() {
-                var marketId = [];
-                var allLatlng = [];
-                var allMarkers = [];
-                var marketName = [];
-                var marker = [];
-                $('#searchZip').submit(function () { // bind function to submit event of form
-                    var userZip = $("#textZip").val();
-                    var API = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + userZip;;
-                    $.ajax({
-                        type: "GET",
-                        contentType: "application/json; charset=utf-8",
-                        url: API,
-                        dataType: 'jsonp',
-                        success: function (data) {
-                            $.each(data.results, function (i, val) {
-                                marketId.push(val.id);
-                                marketName.push(val.marketname);
-                            });
-                            var counter = 0;
-                            //Use ID to get details
-                            $.each(marketId, function (k, v) {
-                                $.ajax({
-                                    type: "GET",
-                                    contentType: "application/json; charset=utf-8",
-                                    url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + v,
-                                    dataType: 'jsonp',
-                                    success: function (data) {
-                                        doSomething(data);
-                                    }
-
-
-                                });
-
-                                function doSomething(data) {
-                                    for (var key in data) {
-                                        if (!data.hasOwnProperty(key) && data === undefined) {
-                                            continue;
-                                        }
-                                        var results = data[key];
-                                        var GoogleLink = results.GoogleLink;
-                                        var latLong = decodeURIComponent(GoogleLink.substring(GoogleLink.indexOf("=") + 1, GoogleLink.lastIndexOf("(")));
-                                        var split = latLong.split(',');
-                                        var latitude = parseFloat(split[0]);
-                                        var longitude = parseFloat(split[1]);
-                                        var foundMarket = marketName[counter].substring(4);
-                                        myLatlng = new google.maps.LatLng(latitude, longitude);
-                                        allMarkers = new google.maps.Marker({
-
-                                            position: myLatlng,
-                                            map: map,
-                                            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                                            title: marketName[counter],
-                                            html: '<div id="results" class="markerPop">' + '<h1>' + foundMarket + '</h1>' +
-                                                '<h3>' + results.Address + '</h3>' + '<p>' + results.Products.split(';') + '</p>' +
-                                                '<p>' + results.Schedule + '</p>' + '</div>'
-                                        });
-                                        allLatlng.push(myLatlng);
-                                        marker.push(allMarkers);
-                                        counter++;
-                                    };
-                                    google.maps.event.addListener(allMarkers, 'click', function () {
-                                        infowindow.setContent(this.html);
-                                        infowindow.open(map, this);
-                                    });
-                                    var bounds = new google.maps.LatLngBounds();
-                                    for (var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
-                                        bounds.extend(allLatlng[i]);
-                                    }
-                                    map.fitBounds(bounds);
-
-                                }
-
-                            });
-                        }
-                    });
-                    return false;
-                    //initMap();
-                });
-            }
-
-        });
-        $(function () {
-            $("header, footer").hide();
-        });
-    </script>
-
-</section>
-}
