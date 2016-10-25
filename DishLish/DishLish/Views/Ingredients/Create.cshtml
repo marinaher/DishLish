@@ -9,7 +9,30 @@
 <head>
     <title>Ingredients</title>
     <script src="~/Scripts/jquery-1.11.1.min.js"></script>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/master.css" rel="stylesheet" />
+    <style>
+    .btn-default {
+        color: #333333;
+        background-color: #ffffff;
+        border-color: #cccccc;
+    }
+
+    .btn-default:hover,
+    .btn-default:focus,
+    .btn-default:active,
+    .btn-default.active,
+    .open .dropdown-toggle.btn-default {
+      color: #333333;
+      background-color: #ebebeb;
+      border-color: #adadad;
+    }
+
+    .btn-default:active,
+    .btn-default.active,
+    .open .dropdown-toggle.btn-default {
+      background-image: none;
+    }
+    </style>
 </head>
 <body>
     <h1>Ingredients</h1>
@@ -292,8 +315,7 @@
                     <tr>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" class="ing" value="WholeChicken,meat"> Chicken - Whole
-                            </label>
+                                <input type="checkbox" class="ing" value="Chicken,meat"> Chicken </label>
                         </td>
                         <td>
                             <label class="btn btn-default">
@@ -334,8 +356,7 @@
                         </td>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" class="ing" value="Shank,meat"> Beef - Shank
-                            </label>
+                                <input type="checkbox" class="ing" value="Beef,meat"> Beef </label>
                         </td>
                         <td>
                             <label class="btn btn-default">
@@ -405,7 +426,7 @@
                         </td>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" class="ing" value="Bacon,meat"> Bacon
+                                <input type="checkbox" class="ing" value="Pork,meat"> Pork
                             </label>
                         </td>
                         <td>
@@ -427,7 +448,7 @@
                     <tr>
                         <td>
                             <label class="btn btn-default">
-                                <input type="checkbox" class="ing" value="PorkSpareRibs,meat"> Pork - Spare Ribs
+                                <input type="checkbox" class="ing" value="PorkSpareRibs,meat"> Bacon
                             </label>
                         </td>
                         <td>
@@ -678,7 +699,7 @@
     <div style="padding-top: 22px;">
         @Html.ActionLink("Back to List", "Index")
         <span>
-            <button onclick="SaveIngredient()" id="saveIngredients">Add ingredients</button>
+            <a href="index" onclick="SaveIngredient()" id="saveIngredients">Add ingredients</a>
         </span>
     </div>
 
