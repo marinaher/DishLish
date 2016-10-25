@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <h2>Ingredients Index</h2>
     <p>List of available ingredients.</p>
     <p>Click on the checkboxes to select ingredients to make recipes.</p>
@@ -50,7 +49,7 @@
     <div>
         <button onclick="GetReceipesBasedOnIngredients('@Model.ingredients')" type="button" id="whatCanIMake" class="btn btn-secondary">Search for recipes based on my current ingredients.</button>
     </div>
-
+    <ul id="searchRecipesList" class="row flex-container"></ul>
     <script src="~/Scripts/scripts.js"></script>
 </body>
 
