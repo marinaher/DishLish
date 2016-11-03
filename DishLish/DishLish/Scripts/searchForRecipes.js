@@ -1,7 +1,7 @@
 ﻿// Global variables
 var yumID = '86f441c9';
 var yumKey = 'cccd1f0197909d57a96869bd16487c92';
-var baseSearchURL = 'http://api.yummly.com/v1/api/recipes?_app_id=' + yumID + '&_app_key=' + yumKey;
+var baseSearchURL = 'http://api.yummly.com/v1/api/recipes?_app_id=' + yumID + '&_app_key=' + yumKey + '&requirePictures=true';
 var coursesURL = 'http://api.yummly.com/v1/api/metadata/course?_app_id=' + yumID + '&_app_key=' + yumKey;
 var cuisinesURL = 'http://api.yummly.com/v1/api/metadata/cuisine?_app_id=' + yumID + '&_app_key=' + yumKey;
 var cuisineData = [];
@@ -145,12 +145,12 @@ function populateSearchResults(results) {
         html = '<h3>No recipes match your search.</h3>'
     } else {
         for (var i = 0; i < results.matches.length; i++) {
-
             html += '<br /><li class="listOfRecipeInfo col-sm-6 col-md-3 flex-item">';
+            html += '<hr>';
             html += '<h4 class="recipeName">' + results.matches[i].recipeName + '</h4>';
             html += '<img class="artWork" src=' + results.matches[i].imageUrlsBySize[90] + '>';
-            html += '<p class="time"> Cook time: (seconds)' + results.matches[i].totalTimeInSeconds + '</p>';
-            html += '<p class="rating"> Rating: ' + results.matches[i].rating + '</p>';
+            html += '<p class="time" style="font-size: 15px;"> Cook time: (seconds)' + results.matches[i].totalTimeInSeconds + '</p>';
+            html += '<p class="rating" style="font-size: 15px;"> Rating: ' + results.matches[i].rating + '</p>';
 
             html += '<br /><label>Ingredients:</label>' + ' ';
             for (var j = 0; j < results.matches[i].ingredients.length; j++) {

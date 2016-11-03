@@ -4,40 +4,37 @@
 }
 <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
 <link href="~/Content/Site.css" rel="stylesheet" />
-
-<h2 id="helloUser">Hello @(ViewData["FullName"])!</h2>
-
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div class="">
-    <h4></h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Add to Inventory:</dt>
+<body class="manageBG">
+    <h2 id="helloUser">Hello @(ViewData["FullName"])!</h2>
+    <br />
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>Add to Inventory:</dt>
             <dd>
-                [ <a href="../Ingredients/Create">Add Ingredients to Inventory</a> ]
+                <a href="../Ingredients/Create">[  Add Ingredients to Inventory  ]</a>
             </dd>
-        <dt>See Current Inventory:</dt>
+            <dt>See Current Inventory:</dt>
             <dd>
-                [ <a href="../Ingredients/Index">See Current Inventory</a> ]
+                <a href="../Ingredients/Index">[  See Current Inventory  ]</a>
             </dd>
-        <dt>See Favorite Recipes:</dt>
-        <dd>
-            [ <a href="../FavoriteRecipes/Index">See Favorite Recipes</a> ]
-        </dd>
-    </dl>
-    <dl class="dl-horizontal">
-        <dt>Password:</dt>
+            <dt>See Favorite Recipes:</dt>
             <dd>
-                [
+                <a href="../FavoriteRecipes/Index">[  See Favorite Recipes  ]</a>
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>Password:</dt>
+            <dd>
                 @if (Model.HasPassword)
                 {
-                    @Html.ActionLink("Change your password", "ChangePassword")
+                    @Html.ActionLink("[  Change your password  ]", "ChangePassword")
                 }
                 else
                 {
                     @Html.ActionLink("Create", "SetPassword")
                 }
-                ]
             </dd>
-    </dl>
-</div>
+        </dl>
+    </div>
+</body>

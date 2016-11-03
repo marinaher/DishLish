@@ -30,6 +30,7 @@ a:hover, a:focus{
 
 a {
     color: #0a6278;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -97,6 +98,7 @@ a {
 
 .dl-horizontal dt {
     white-space: normal;
+    color: black;
 }
 
 input,
@@ -112,13 +114,14 @@ textarea {
     font-size: x-small;
     font-weight: 100;
 }
+
 .image {
     background: url(../Images/bg2.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height:100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
 }
 
 /* == Register styles == */
@@ -130,6 +133,16 @@ textarea {
 .recaptcha {
     padding-left: 120px;
     margin-top: 0;
+}
+
+/* == Manage Page ==*/
+.manageBG{
+    background: url(../Images/bg3.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
 }
 
 /* == Search Results Main Page == */
@@ -167,7 +180,14 @@ label.findRecipeLabel {
 i#separate {
     font-weight: normal;
     font-size: small;
+    text-shadow: 0px 2px 3px black;
 }
+
+h4.recipeName {
+    color: white;
+    font-size: 22px;
+}
+
 .form-control {
     max-width: 100%;
 }
@@ -203,10 +223,9 @@ select.input-sm {
 }
 
 .flex-item {
-    height: 179px;
-    margin-top: 10px;
-    padding: 5px;
-    width: 249px;
+    height: 50%;
+    margin-top: 19px;
+    width: 50%;
 }
 
 /* == GroceryList == */
@@ -276,7 +295,7 @@ ul {
 /* == Footer == */
 #footer {
     width: 88%;
-    position: absolute;
+    position: relative;
     bottom:0;
 }
 footer a:hover, footer a:focus{
@@ -307,7 +326,7 @@ footer ul li {
     margin-right: 15px;
 }
 footer ul li a {
-    color: #fff;
+    color: #696d6e;
     text-decoration: none;
     font-size: 25px;
 }
