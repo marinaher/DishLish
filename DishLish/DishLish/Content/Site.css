@@ -5,10 +5,90 @@ body {
     padding-bottom: 20px;
 }
 
+a:hover, a:focus{
+    color: #b96232;
+}
+
+
+::selection {
+  background: #2e5790; /* WebKit/Blink Browsers */
+  color:white;
+}
+::-moz-selection {
+  background: #2e5790; /* Gecko Browsers */
+  color:white;
+}
+
 .body-content {
     padding-top: 55px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.container{
+
+}
+
+.navbar-inverse{
+    background-color: #fff;
+    border-color: #2e5790;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+    color: #2e5790;
+    font-size: 3rem;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: #2e5790;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
+    background-color: transparent;
+    color: #b96232;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{
+    background-color: transparent;
+    color: #b96232;
+}
+
+.btn-default{
+    color: #ffffff;
+    background-color: #2e5790;
+    border-color: #003782;
+}
+
+.btn-default:hover{
+    background-color: #003782;
+    border-color: #003782;
+}
+
+#homeContainer{
+    padding: 40px;
+    margin-top:6%;
+}
+
+#homeContainer h1{
+    color:#fff;
+    /*text-shadow: 1px 1px 1px black;*/
+    font-size: 6rem;
+}
+#homeContainer p{
+    color:#fff;
+    /*text-shadow: 1px 1px 1px black;*/
+    font-size: 3rem;
+}
+
+#myBg{
+    border-radius: 5px;
+    position:absolute;
+    background:#2d2218;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity:0.6;
+    z-index:-2;
 }
 
 .dl-horizontal dt {
@@ -28,21 +108,68 @@ textarea {
     font-size: x-small;
     font-weight: 100;
 }
-#helloUser {
-
-}
 .image {
-    background: url(../Images/pepper.jpg) no-repeat;
-    max-width: 100%;
-    background-position: left top;
-    background-size: auto, cover;
-    background-attachment: fixed;
-    height: 100vh;
+    background: url(../Images/bg2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+}
 }
 /* == Search Results Main Page == */
+#title{
+    color: white;
+}
+#title h3 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+#title p{
+    font-size: 1.2em;
+    text-shadow: 1px 1px 1px black;
+}
+
+#searchForm {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+#searchResults {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+label {
+    display: inline-block;
+    letter-spacing: 0.0785em;
+    max-width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-shadow: 0px 2px 3px black;
+}
+i#separate {
+    font-weight: normal;
+    font-size: small;
+}
+.form-control {
+    max-width: 100%;
+}
+
+select.input-sm {
+    max-width: 100%;
+}
+
 #searchResultsList {
     list-style: none;
-}
+} 
+
+.btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default{
+    color: #ffffff;
+    background-color: #2e5790;
+    border-color: #003782;
+}                                                                   }
+
 .listOfRecipeInfo {
     display: inline-table;
 }
@@ -135,7 +262,13 @@ ul {
 /* == Footer == */
 #footer {
     width: 100%;
+    position: fixed;
+    bottom:0;
 }
+footer a:hover, footer a:focus{
+    color: #2e5790;
+}
+
 .form-group {
     margin-bottom: 49px;
 }
@@ -144,6 +277,8 @@ footer .row {
     margin: 0 auto;
 }
 footer p {
+    color:#49596f;
+    font-size:12px;
     padding: 20px 0;
     margin-left: -20px;
     margin-top: 13px;
@@ -158,7 +293,7 @@ footer ul li {
     margin-right: 15px;
 }
 footer ul li a {
-    color: #000000;
+    color: #fff;
     text-decoration: none;
     font-size: 25px;
 }
@@ -180,112 +315,3 @@ footer ul li a {
     height: 35px;
     width: 35px;
 }
-
-
-
-
-
-
-
-
-
-/* == Sections == */
-/*/*.wrapper {
-    height: 100% !important;
-    height: 100%;
-    margin: 0 auto; 
-    overflow: hidden;
-}
-.main {
-    float: left;
-    width: 100%;
-    margin: 0 auto;
-}
-.main section .page_container {
-      position: relative;
-      top: 25%;
-      margin: 0 auto 0;
-      max-width: 950px;
-      z-index: 3;
-    }
-.main section  {
-    /*overflow: hidden;
-}*/
-/*.main section .page_container .btns {
-    clear: both;
-    float: left;
-    text-align: center;
-    width: 435px;
-}
-.main section .page_container .btns a{
-    text-align: center;
-}*/
-    /* -- Page 1 -- */
-    /*.main section.page1 {
-        background:rgb(230, 217, 200);
-    }
-    .main section.page1 h1 {
-        text-align: left;
-        padding: 0;
-        margin-bottom: 15px;
-        font-size: 70px;
-        color: black;
-    }*/
-    /* -- Page 2 -- */
-    /*.main section.page1 h2 {
-        color: rgba(0,0,0,0.85);
-        text-align: center;
-        width: 435px;
-        line-height: 160%;
-    }
-    .main section.page2 {
-        background: #555557;
-    }
-    .main section.page2 .page_container {
-        margin-top: 240px;
-        overflow: hidden;
-    }
-    .main section.page2 h1 {
-        text-align: center;
-        padding: 0;
-        margin-bottom: 15px;
-        font-size: 50px;
-        letter-spacing: -1px;
-        color: white;
-    }
-    .main section.page2 h2 {
-        color: rgba(255,255,255,0.85);
-        text-align: center;
-        line-height: 160%;
-        font-weight: 100;
-    }
-    .viewing-page-2 .back{
-        background: rgba(0, 0, 0, 0.25);
-        color: #FFF;
-    }*/
-    /* -- Page 3 -- */
-    /*.main section.page3 .page_container {
-          overflow: hidden;
-          width: 500px;
-          right: -285px;
-        }
-    .main section.page3 h1 {
-        text-align: left;
-        padding: 0;
-        margin-bottom: 0;
-        font-size: 70px;
-        letter-spacing: -1px;
-        color: black;
-    }
-    .main section.page3 h2 {
-        color: rgba(0,0,0,0.85);
-        text-align: left;
-        line-height: 160%;
-        font-weight: 100;
-        font-size: 21px;
-    }
-.searchable-container{margin:100px 0 0 0}
-.searchable-container label.btn-default.active{background-color:#b50d50;color:white}
-.searchable-container label.btn-default{width:90%;border:1px solid #efefef;margin:5px; box-shadow: 1px 1px 1px 0 #ccc2c8;}
-.searchable-container label .bizcontent{width:100%;}
-.searchable-container .btn-group{width:80%}*/

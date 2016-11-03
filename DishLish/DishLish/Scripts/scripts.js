@@ -30,11 +30,10 @@
         });
     }
 
-    // Display on Page
+    // Display on Page >> moved to searchKeywordRecipes.js file to keep clean
     var displayOnPage = function (data, userInput) {
         var ingredientInfo = createIngredientList(data);
         var displayAmount = 10;
-
         $("#resultsLabel").fadeIn(200);
         $("#resultsCount").text("");
         $("#resultsCount").text(displayAmount + " results for \"" + userInput + "\".");
@@ -42,11 +41,9 @@
         $('#searchResultsList').fadeIn(200);
         $('#searchResultsList').html(ingredientInfo);
     }
-
     var createIngredientList = function (data) {
         var dataItems = data.matches;
         var ingredientInfo = '';
-
         for (var i = 0; i < dataItems.length; i++) {
             var item = dataItems[i];
             var recipeInfo = {
@@ -56,9 +53,7 @@
                 totalTimeInSeconds: item.totalTimeInSeconds,
                 rating: item.rating
             };
-
             console.log(recipeInfo.imageUrlsBySize[90]);
-
             dataItems[i] = recipeInfo;
             ingredientInfo += '<li class="listOfRecipeInfo col-sm-6 col-md-3 flex-item">';
             ingredientInfo += '<h4 class="recipeName">' + recipeInfo.recipeName + '</h4>';
@@ -69,45 +64,6 @@
         }
         return ingredientInfo;
     }
-
-    // Save Ingredients onClick Redirect to Index
-    $('#saveIngredients').click(function () {
-        //window.location.href="Index"
-    });
-
-    // Save Ingredients onClick Redirect to Index
-    $('#whatCanIMake').click(function () {
-        //window.location.href = "Index"
-    });
-
-    //// Save Ingredients to Db
-    //$("#saveIngredients").click(function () {
-    //    var selected = [];
-    //    var ingredients = $("[type=checkbox]");
-    //    var ingredientsLength = ingredients.length;
-    //    var url = "GetIngredients";
-    //    //console.log(ingredients);
-    //    var ingredientsSelected = $(".form-group input:checked");
-    //    $(ingredientsSelected).each(function () {
-    //        var x = $(this).closest("div").attr('id');
-    //        var y = $(this).attr('value');
-    //        var z = {x, y }
-    //        selected.push(z);
-    //        console.log(z);
-    //    });
-
-        //console.log(JSON.stringify(selected));
-        //$.post("IngredientsController/GetIngredients", JSON.stringify(selected));
-        //$.ajax({
-        //    type: "POST",
-        //    url: url,
-        //    data: JSON.stringify(selected),
-        //    contentType: "application/json; charset=utf-8",
-        //    dataType: "json",
-        //    //error: function (response) {
-        //    //    alert("Error");
-        //    })
-        //});
 
     // Scroll Functions
     $(window).scroll(function () {

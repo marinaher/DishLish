@@ -7,35 +7,61 @@
 <head>
     <meta charset="utf-8"/>
     <title>DishLish Home Page</title>
+    <script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>
     <link href="~/Content/master.css" rel="stylesheet" />
-    <style>
-        .image {
-            background-image: url("../../Images/pepper.jpg");
-            height: 500px;
-            width: 100%;
-        }
-    </style>
 </head>
 <body class="image">
-    <div class="container" style="align-content: center">
+    
+    <div class="container">
+
         <div class="row">
-            <div class="col-xs-12" id="homeContainer">
-                <h1>DishLish</h1>
+            <div class="col-lg-8 col-lg-offset-2" id="homeContainer">
+                <h1>&#10020; DISHLISH</h1>
                 @if (Request.IsAuthenticated)
                 {
-                    <p>Search for recipes based on key words <i>i.e: salmon, basil, pho, italian, etc.</i></p>
+                    <div id="title">
+                        <h3 id="searchForRecipe">Search for recipes</h3>
+                        <p>Any forms left blank may result in less recipes returned.</p>
+                    </div>
+                    <div id="searchForm">
+                        <label>Select Cuisine type:</label>
+                        <br />
+                        <select id="cuisineList" class="form-control input-sm"></select>
+                        <br />
+
+                        <label>Select Course:</label>
+                        <br />
+                        <select id="courseList" class="form-control input-sm"></select>
+                        <br />
+
+                        <label>Search with keywords <i id="separate">(separate with spaces)</i>:</label>
+                        <br />
+                        <input id="searchParams" type="text" class="form-control" placeholder="Type in a keyword"/>
+                        <br />
+
+                        @*<label>Enter the max number of recipes to return:</label>
+                        <br />
+                        <input id="numResults" type="text" value="10" class="form-control"/>
+                        <br />
+                        <br />*@
+
+                        <button id='search' class="btn btn-default btn-lg" onclick='recipeSearch()'>Search for Recipes</button>
+                    </div>
+                    <div id="searchResults" class="row flex-container"></div>
+                    @*<p>Search for recipes based on key words <i>i.e: salmon, basil, pho, italian, etc.</i></p>
                     <div class="input-group">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-secondary" id="searchButton"><i class="fa fa-search"></i></button>
                         </span>
                         <input type="text" class="form-control" id="searchField" placeholder="Search for...">
-                    </div>
+                    </div>*@
                 }
                 else
                 {
                     <p>Find recipes based on ingredients that you currently have and search for recipes to create.</p>
                   <a class="btn btn-default btn-lg" href="/Account/Register"><i class="fa fa-pencil"></i> Register</a>
                 }
+                <span id="myBg"></span>
             </div>
         </div>
     </div>
@@ -57,7 +83,8 @@
     <div id="results">
         <h4 id="resultsLabel">Returned <span id="resultsCount"></span></h4>
     </div>
-    <ul id="searchResultsList" class="row flex-container"></ul>
+    @*<ul id="searchResultsList" class="row flex-container"></ul>*@
     <script src="~/Scripts/scripts.js"></script>
+    <script src="~/Scripts/searchForRecipes.js"></script>
 </body>
 </html>
