@@ -9,7 +9,6 @@ a:hover, a:focus{
     color: #b96232;
 }
 
-
 ::selection {
   background: #2e5790; /* WebKit/Blink Browsers */
   color:white;
@@ -26,7 +25,12 @@ a:hover, a:focus{
 }
 
 .container{
+    height: 100%;
+}
 
+a {
+    color: #0a6278;
+    text-decoration: none;
 }
 
 .navbar-inverse{
@@ -70,12 +74,12 @@ a:hover, a:focus{
 
 #homeContainer h1{
     color:#fff;
-    /*text-shadow: 1px 1px 1px black;*/
+    text-shadow: 1px 1px 1px black;
     font-size: 6rem;
 }
 #homeContainer p{
     color:#fff;
-    /*text-shadow: 1px 1px 1px black;*/
+    text-shadow: 1px 1px 1px black;
     font-size: 3rem;
 }
 
@@ -116,7 +120,18 @@ textarea {
   background-size: cover;
   height:100vh;
 }
+
+/* == Register styles == */
+.center-div {
+    margin: 0 auto;
+    width: 60%;
+    height: 100px;
 }
+.recaptcha {
+    padding-left: 120px;
+    margin-top: 0;
+}
+
 /* == Search Results Main Page == */
 #title{
     color: white;
@@ -139,7 +154,7 @@ textarea {
     text-shadow: 1px 1px 1px black;
 }
 
-label {
+label.findRecipeLabel {
     display: inline-block;
     letter-spacing: 0.0785em;
     max-width: 100%;
@@ -148,6 +163,7 @@ label {
     margin-bottom: 5px;
     text-shadow: 0px 2px 3px black;
 }
+
 i#separate {
     font-weight: normal;
     font-size: small;
@@ -244,7 +260,6 @@ select.input-sm {
 }
 
 .liEl {
-    ;
     width: 250px;
     padding: 2%;
     margin-left: 8%;
@@ -258,11 +273,10 @@ ul {
     margin-top: 4%;
 }
 
-
 /* == Footer == */
 #footer {
-    width: 100%;
-    position: fixed;
+    width: 88%;
+    position: absolute;
     bottom:0;
 }
 footer a:hover, footer a:focus{
@@ -270,7 +284,7 @@ footer a:hover, footer a:focus{
 }
 
 .form-group {
-    margin-bottom: 49px;
+    margin-bottom: 40px;
 }
 footer .row {
     width: 100%;

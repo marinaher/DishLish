@@ -24,37 +24,24 @@
                         <p>Any forms left blank may result in less recipes returned.</p>
                     </div>
                     <div id="searchForm">
-                        <label>Select Cuisine type:</label>
+                        <label class="findRecipeLabel">Select Cuisine type:</label>
                         <br />
                         <select id="cuisineList" class="form-control input-sm"></select>
                         <br />
 
-                        <label>Select Course:</label>
+                        <label class="findRecipeLabel">Select Course:</label>
                         <br />
                         <select id="courseList" class="form-control input-sm"></select>
                         <br />
 
-                        <label>Search with keywords <i id="separate">(separate with spaces)</i>:</label>
+                        <label class="findRecipeLabel">Search with keywords <i id="separate">(separate with spaces)</i>:</label>
                         <br />
                         <input id="searchParams" type="text" class="form-control" placeholder="Type in a keyword"/>
                         <br />
 
-                        @*<label>Enter the max number of recipes to return:</label>
-                        <br />
-                        <input id="numResults" type="text" value="10" class="form-control"/>
-                        <br />
-                        <br />*@
-
                         <button id='search' class="btn btn-default btn-lg" onclick='recipeSearch()'>Search for Recipes</button>
                     </div>
                     <div id="searchResults" class="row flex-container"></div>
-                    @*<p>Search for recipes based on key words <i>i.e: salmon, basil, pho, italian, etc.</i></p>
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-secondary" id="searchButton"><i class="fa fa-search"></i></button>
-                        </span>
-                        <input type="text" class="form-control" id="searchField" placeholder="Search for...">
-                    </div>*@
                 }
                 else
                 {
@@ -65,25 +52,9 @@
             </div>
         </div>
     </div>
-    @*<section id="popularRecipes">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div class="header">
-                        <h2>Popular Recipes</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
-                    </div>
-                    <div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>*@
     <div id="results">
         <h4 id="resultsLabel">Returned <span id="resultsCount"></span></h4>
     </div>
-    @*<ul id="searchResultsList" class="row flex-container"></ul>*@
     <script src="~/Scripts/scripts.js"></script>
     <script src="~/Scripts/searchForRecipes.js"></script>
 </body>

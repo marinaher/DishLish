@@ -122,17 +122,17 @@ function recipeSearch() {
     searchURL += '&q=' + query;
 
     // Get the number of results to return and add it to the search URL
-    var numResults = 14;
-    //var numResults = document.getElementById('numResults').value;
-    //if (parseInt(numResults) == 'NaN') {
-    //    numResults = 10;
-    //}
-    //searchURL += '&maxResult=' + numResults;
+    var numResults = 12;
+    searchURL += '&maxResult=' + numResults;
 
     $.ajax({
         url: searchURL + '&callback=?',
         dataType: 'json',
         success: populateSearchResults
+    });
+
+    $(function () {
+        $("header, footer").hide();
     });
 };
 
@@ -151,17 +151,13 @@ function populateSearchResults(results) {
             html += '<img class="artWork" src=' + results.matches[i].imageUrlsBySize[90] + '>';
             html += '<p class="time"> Cook time: (seconds)' + results.matches[i].totalTimeInSeconds + '</p>';
             html += '<p class="rating"> Rating: ' + results.matches[i].rating + '</p>';
+
+            html += '<br /><label>Ingredients:</label>' + ' ';
+            for (var j = 0; j < results.matches[i].ingredients.length; j++) {
+                html += results.matches[i].ingredients[j] + ', ';
+            }
+            html += '</div>';
             html += '</li>';
-
-
-
-            //html += '<br /><div class=\'recipe\'><label>' + results.matches[i].recipeName + '</label>';
-            //html += '<br /><img class="artWork" src=' + results.matches[i].imageUrlsBySize[90] + '>';
-            //html += '<br /><label>Ingredients:</label>' + ' ';
-            //for (var j = 0; j < results.matches[i].ingredients.length; j++) {
-            //    html += results.matches[i].ingredients[j] + ', ';
-            //}
-            //html += '</div>';
         }
     }
     document.getElementById('searchResults').innerHTML = html;
