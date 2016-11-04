@@ -8,7 +8,7 @@
     <link href="~/Content/master.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="ingBG">
     <h2>My Current Ingredients</h2>
     <p>List of available ingredients.</p>
     <p>Click on the checkboxes to select ingredients to make recipes.</p>
@@ -16,7 +16,7 @@
     <br />
     <table class="table">
         <tr>
-            <th><i class="fa fa-check"></i></th>
+            @*<th><i class="fa fa-check"></i></th>*@
             <th>Ingredient Name</th>
             <th>Category</th>
             @*<th>UnitOfMeasurement</th>*@
@@ -25,9 +25,9 @@
         @foreach (var item in Model.currentIngredients)
         {
             <tr>
-                <td>
+                @*<td>
                     <input type="checkbox" name="selectIngredient" value="selectedIngredient" id="selectIngredient" />
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.IngredientName)
                 </td>
@@ -38,8 +38,8 @@
                     @Html.DisplayFor(modelItem => item.UnitOfMeasurement)
                 </td>*@
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>
             </tr>
@@ -47,46 +47,9 @@
     </table>
 
     <div>
-        <button onclick="GetReceipesBasedOnIngredients('@Model.ingredients')" type="button" id="whatCanIMake" class="btn btn-secondary">Search for recipes based on my current ingredients.</button>
+        <button onclick="GetReceipesBasedOnIngredients('@Model.ingredients')" type="button" id="whatCanIMake" class="btn btn-default">Search for recipes based on my current ingredients.</button>
     </div>
-    <ul id="searchRecipesList" class="row flex-container"></ul>
+    <ul id="searchRecipesList" @*class="row flex-container"*@></ul>
 
     <script src="~/Scripts/scripts.js"></script>
 </body>
-
-
-@*
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IngredientName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UnitOfMeasurement)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IngredientName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitOfMeasurement)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-</table>*@

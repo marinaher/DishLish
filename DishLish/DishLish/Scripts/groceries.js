@@ -12,22 +12,22 @@
             $('#input').val('');
 
             if ($("#dropDown").val() == "vegetableCategory") {
-                $(newEl).css("background-color", "green");
+                $(newEl).css("background-color", "#3D9970");
             }
             else if ($("#dropDown").val() == "meatCategory") {
-                $(newEl).css("background-color", "red");
+                $(newEl).css("background-color", "#FF6A6A");
             }
             else if ($("#dropDown").val() == "grainCategory") {
-                $(newEl).css("background-color", "brown");
+                $(newEl).css("background-color", "#68838B");
             }
             else if ($("#dropDown").val() == "dairyCategory") {
-                $(newEl).css("background-color", "blue");
+                $(newEl).css("background-color", "#CDCDC1");
             }
             else if ($("#dropDown").val() == "fruitCategory") {
-                $(newEl).css("background-color", "pink");
+                $(newEl).css("background-color", "#FF3E96");
             }
             else if ($("#dropDown").val() == "otherCategory") {
-                $(newEl).css("background-color", "purple");
+                $(newEl).css("background-color", "#7AC5CD");
             }
 
             $(check).click(function () {

@@ -128,7 +128,6 @@ function GetReceipesBasedOnIngredients(ingredientsString) {
     });
 }
 
-
 function RenderRecipes(data) {
     //console.log(data);
     var dataItems = data.matches;
@@ -155,7 +154,7 @@ function RenderRecipes(data) {
                 dataItems[i] = foundRecipeInfo;
                 foundRecipe += '<span class=' + foundRecipeInfo.recipeID + '>';
                 foundRecipe += '<li class="listOfRecipeInfo col-sm-6 col-md-3 flex-item">';
-                foundRecipe += '<h4 class="recipeName">' + foundRecipeInfo.recipeName + '</h4>';
+                foundRecipe += '<h4 class="foundRecipeName" style="color: black; font-size: 25px;">' + foundRecipeInfo.recipeName + '</h4>';
                 foundRecipe += '<img class="artWork" src=' + foundRecipeInfo.imageUrlsBySize[90] + '>';
                 foundRecipe += '<p class="time"> Cook time: ' + foundRecipeInfo.totalTimeInSeconds + ' (seconds)</p>';
                 foundRecipe += '<p class="rating"> Rating: ' + foundRecipeInfo.rating + '</p>';

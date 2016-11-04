@@ -275,6 +275,7 @@
     <Content Include="Images\bg3.jpeg" />
     <Content Include="Images\pepper.jpg" />
     <Content Include="Images\smileFood.png" />
+    <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\groceries.js" />
     <Content Include="Scripts\Maps.js" />
     <Content Include="Scripts\scripts.js" />
