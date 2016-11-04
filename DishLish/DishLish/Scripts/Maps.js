@@ -40,7 +40,7 @@
         infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
     }
     var mapOptions = {
-        zoom: 10,
+        zoom: 13,
         center: {
             lat: 43.038902,
             lng: -87.906471

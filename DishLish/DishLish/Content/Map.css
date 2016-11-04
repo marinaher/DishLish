@@ -11,33 +11,38 @@
     position:absolute;   
     top:82px;
     bottom: 26px;
-    background: rgba(8, 14, 10, 0.7);
+    background: rgba(34, 40, 52, 0.83);
     left: 30px;
 }
 #sidebar h2 {
     color: white;
-    font-family: font-family: 'Fredoka One', cursive;
-    padding-top: 50px;
-    padding-left: 10px;
+    font-size: 46px;
+    padding-top: 10px;
+    padding-left: 14px;
     padding-right: 10px;
+    text-shadow: 0px 2px 3px black;
 }
 #sidebar p {
-    font-family: font-family: 'Fredoka One', cursive;
     color: white;
-    padding-left: 10px;
+    font-size: 17px;
+    padding-top: 20px;
+    padding-left: 14px;
     padding-right: 10px;
+    text-shadow: 0px 1px 1px black;
 }
 .zipSearch {
     padding-top: 50px;
 }
 #zipSubmit {
     background-color: white;
-    color: #9b457c;
+    color: black;
+    font-weight: 700;
     padding-top: 3px;
     padding-bottom: 2px;
 }
 #textZip {
     color: black;
+    width: 163px;
 }
 #results {
     height: 117px;
